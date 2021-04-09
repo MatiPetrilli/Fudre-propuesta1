@@ -10141,7 +10141,7 @@ img::-moz-selection {
   font-size: 1rem;
   color: #fff;
   letter-spacing: 0.0625em;
-  line-height: 220%;
+  line-height: 340%;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
   color: #c5ae8c;
@@ -10191,7 +10191,7 @@ img::-moz-selection {
 }
 header.masthead {
   
-  padding-top: 6rem; 
+  padding-top: 8rem; 
   background: black; 
   padding-bottom: 1px;
   box-shadow: 1px 6px 22px -2px rgba(0,0,0,0.74);
