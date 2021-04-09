@@ -108,15 +108,15 @@ abbr[data-original-title] {
 }
 @media (max-width:950px) {
     #services {
-        background-size: 170%!important;
+        background-size: 269%!important;
         padding: 0px!important
     }
     #services .container {
-        height: 43vh!important
+        height: 73vh!important
     }
 }
 #services{
-  text-align: center; color: #fff;background: url(../assets/img/header-bg2.jpg) #000;background-repeat: no-repeat;background-attachment: scroll;background-position: center center;background-size: contain;
+  text-align: center; color: #fff;background: url(../assets/img/header-bg2.jpg) #000;background-repeat: no-repeat;background-attachment: scroll;background-position: center center;background-size: cover;
 }
 #services .container{
   height: 56vh
@@ -130,7 +130,7 @@ abbr[data-original-title] {
     font-family: 'Source Sans Pro', sans-serif;
     text-transform: uppercase;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 1rem;
     letter-spacing: 2.5px;
 }
 address {
@@ -2518,8 +2518,8 @@ fieldset:disabled a.btn {
 }
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #fec503;
-  border-color: #f3bd01;
+  background-color: #87664b;
+  border-color: #87664b;
 }
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(254, 216, 84, 0.5);
@@ -10046,7 +10046,7 @@ p {
 }
 
 .page-section {
-  padding: 6rem 1rem;
+  padding: 9rem 1rem;
 }
 .page-section h2.section-heading {
   font-size: 3rem;
@@ -10138,9 +10138,10 @@ img::-moz-selection {
 #mainNav .navbar-nav .nav-item .nav-link {
   /*font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";*/
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #fff;
   letter-spacing: 0.0625em;
+  line-height: 220%;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
   color: #c5ae8c;
@@ -10185,11 +10186,12 @@ img::-moz-selection {
   header.masthead {
     background-size: contain!important;
     background-color: #000!important;
+    padding-top: 5rem!important;
   }
 }
 header.masthead {
   
-  padding-top: 8rem; 
+  padding-top: 6rem; 
   background: black; 
   padding-bottom: 1px;
   box-shadow: 1px 6px 22px -2px rgba(0,0,0,0.74);
@@ -10243,7 +10245,7 @@ header.masthead .masthead-heading {
   max-width: 25rem;
   margin-left: auto;
   margin-right: auto;
-  border: solid #735c3a 1px;
+  /*border: solid #735c3a 1px;*/
 }
 #portfolio .portfolio-item .portfolio-link {
   position: relative;
@@ -10335,6 +10337,9 @@ header.masthead .masthead-heading {
   text-transform: uppercase;  
   letter-spacing: 2px;
 }
+.descriptionwine{
+  min-height: 100px;
+}
 #portfolio .portfolio-item .portfolio-caption p{
     font-size: 14px;
     font-family: 'Crimson Text', serif;
@@ -10392,7 +10397,7 @@ header.masthead .masthead-heading {
   font-size: 20px!important; font-weight: bold; margin-bottom: 0px;font-family: 'Source Sans Pro', sans-serif;
 }
 .btn-suscribe{
-  background: #000;font-size: 14px; padding: 10px 30px;font-family: 'Crimson Text', serif;
+  font-size: 14px; padding: 10px 30px;font-family: 'Crimson Text', serif;
 }
 #about{
   background: #e4e1de;
@@ -10703,6 +10708,10 @@ option{
   font-weight: 100!important;
   color: #6c757d!important;
   font-family: 'Crimson Text', serif!important;
+}
+select option:hover {
+  background: #ff9500 -webkit-linear-gradient(bottom, #ff9500 0%, #ff9500 100%);
+  color: #fff;
 }
 select{
   font-weight: 100!important;
