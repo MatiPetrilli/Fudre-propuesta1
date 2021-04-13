@@ -93,17 +93,20 @@ function validar(){
 		}
 	}
 	if(envia){
-		gtag_report_conversion();
-		//HACER EL POST AL SERVICIO DEL MAIL:
-		servicio = "OK"
-		//SETEAR LOS HREF DE LOS BOTONES DE MERCADO PAGO SEGUN LAS ELECCIONES
-		if(servicio == "OK"){
-			document.getElementById("gracias").style.display = "block"
-			document.getElementById("formulario").style.display = "none"
-		}else{
-			document.getElementById("error").style.display = "block"
-			document.getElementById("formulario").style.display = "none"
-		}
+		$.ajax({
+	        url:'https://api.apispreadsheets.com/data/10856/',
+	        type:'post',
+	        data:$("#contactForm").serializeArray(),
+	        success: function(){
+	          gtag_report_conversion();
+	          document.getElementById("gracias").style.display = "block"
+			  document.getElementById("formulario").style.display = "none"
+	        },
+	        error: function(){
+	          document.getElementById("error").style.display = "block"
+			  document.getElementById("formulario").style.display = "none"
+	        }
+	    });
 	}
 	nomostrargif();
 }

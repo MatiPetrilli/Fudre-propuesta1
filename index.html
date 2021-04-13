@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Fudre Wine Club – Viví una nueva experiencia en el mundo del vino y unite al club</title>
+    <title>Fudre Wine Club – Viví una nueva experiencia en el mundo del vino y unite al club.</title>
     <meta name="description" content="Disfrutá de los mejores vinos y bodegas todos los meses. Elegidos por especialistas y sommeliers. Membresías pensadas exclusivamente para vos." />
     <link rel="canonical" href="https://www.fudre.com.ar/index.html" />
     <meta itemprop="title" content="Fudre Wine Club – Viví una nueva experiencia en el mundo del vino y unite al club." />
@@ -270,23 +270,23 @@
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" id="name" type="text" placeholder="Nombre *" onkeyup="checkText(this)" maxlength="50"/>
+                                <input class="form-control" name="Nombre" id="id_Nombre" type="text" placeholder="Nombre *" onkeyup="checkText(this)" maxlength="50"/>
                                 <p class="help-block text-danger">Por favor ingresá tu nombre completo.</p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="apellido" type="text" placeholder="Apellido *" onkeyup="checkText(this)" maxlength="50"/>
+                                <input class="form-control" id="id_Apellido" name="Apellido" type="text" placeholder="Apellido *" onkeyup="checkText(this)" maxlength="50"/>
                                 <p class="help-block text-danger">Por favor ingresá tu apellido completo.</p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="email" type="email" placeholder="Mail *" onkeyup="checkNosymbols(this)" maxlength="50"/>
+                                <input class="form-control" name="Email" id="id_Email" type="email" placeholder="Mail *" onkeyup="checkNosymbols(this)" maxlength="50"/>
                                 <p class="help-block text-danger">Por favor ingresá tu email.</p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="phone" type="tel" placeholder="Teléfono *" onkeyup="checkNumeric(this)" maxlength="20"/>
+                                <input class="form-control" id="id_Telefono" name="Telefono" type="tel" placeholder="Teléfono *" onkeyup="checkNumeric(this)" maxlength="20"/>
                                 <p class="help-block text-danger">Por favor ingresá tu número telefónico.</p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="dni" type="tel" placeholder="DNI *" onkeyup="checkNumeric(this)" maxlength="8" />
+                                <input class="form-control" id="id_DNI" name="DNI" type="tel" placeholder="DNI *" onkeyup="checkNumeric(this)" maxlength="8" />
                                 <p class="help-block text-danger">Por favor ingresá tu número de DNI.</p>
                             </div>
                         </div>
@@ -294,31 +294,31 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input class="form-control" id="calle" type="text" placeholder="Calle *" onkeyup="checkNosymbols(this)" maxlength="50" data-validation-required-message="Por favor ingresá la dirección donde vivís." />
+                                        <input class="form-control" id="id_Calle" name="Calle" type="text" placeholder="Calle *" onkeyup="checkNosymbols(this)" maxlength="50" data-validation-required-message="Por favor ingresá la dirección donde vivís." />
                                         <p class="help-block text-danger">Por favor ingresá tu dirección.</p>
                                     </div>
                                     <div class="col-md-3">
-                                        <input class="form-control" id="numcalle" type="tel" placeholder="Número *" onkeyup="checkNumeric(this)" maxlength="10"/>
+                                        <input class="form-control" id="id_Altura" name="Altura" type="tel" placeholder="Número *" onkeyup="checkNumeric(this)" maxlength="10"/>
                                     </div>
                                     <div class="col-md-3">
-                                        <input class="form-control" id="piso" type="tel" placeholder="Piso / puerta " onkeyup="checkNosymbols(this)" maxlength="10"/>
+                                        <input class="form-control" id="id_Piso" name="Piso" type="tel" placeholder="Piso / puerta " onkeyup="checkNosymbols(this)" maxlength="10"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="codpostal" type="tel" placeholder="Código postal *" onkeyup="checkNumeric(this)" maxlength="10"/>
+                                <input class="form-control" id="id_Codigo-Postal" name="Codigo-Postal" type="tel" placeholder="Código postal *" onkeyup="checkNumeric(this)" maxlength="10"/>
                                 <p class="help-block text-danger">Por favor ingresá el código postal de donde vivís.</p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="ciudad" type="text" placeholder="Ciudad *" onkeyup="checkNosymbols(this)" maxlength="15" />
+                                <input class="form-control" id="id_Ciudad" name="Ciudad" type="text" placeholder="Ciudad *" onkeyup="checkNosymbols(this)" maxlength="15" />
                                 <p class="help-block text-danger">Por favor ingresá la ciudad donde vivís.</p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="provincia" type="text" placeholder="Provincia *" onkeyup="checkText(this)" maxlength="20" />
+                                <input class="form-control" id="id_Provincia" name="Provincia" type="text" placeholder="Provincia *" onkeyup="checkText(this)" maxlength="20" />
                                 <p class="help-block text-danger">Por favor ingresá la provincia donde vivís.</p>
                             </div> 
                             <div class="form-group">
-                                <select class="form-control" id="tipomembresia">
+                                <select class="form-control" id="id_Membresia" name="Membresia">
                                     <option value="" disabled selected>Seleccioná el tipo de membresía *</option>   
                                     <option value="MEMBRESIA BROTE X 3 BOTELLAS">MEMBRESIA BROTE X 3 BOTELLAS</option>
                                     <option value="MEMBRESIA BROTE X 4 BOTELLAS">MEMBRESIA BROTE X 4 BOTELLAS</option>
@@ -332,7 +332,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group form-group-textarea mb-md-0">
-                                <textarea class="form-control" id="message" placeholder="Información adicional para la entrega " onkeyup="checkNosymbols(this)"></textarea>                                
+                                <textarea class="form-control" id="id_Informacion" name="Informacion" placeholder="Información adicional para la entrega " onkeyup="checkNosymbols(this)"></textarea>                                
                             </div>
                         </div>
                     </div>
