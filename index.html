@@ -129,7 +129,7 @@
                                 </div>
                             </diV> 
                             <br>
-                            <a href="#contact" onClick="setearmembresia('Brote');" class="btn btn-primary js-scroll-trigger btn-suscribe">SUSCRIBITE</a>                           
+                            <a href="#contact" onClick="setearmembresia('MEMBRESIA BROTE');" class="btn btn-primary js-scroll-trigger btn-suscribe">SUSCRIBITE</a>                           
                         </div>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
                                 </div>
                             </diV> 
                             <br>
-                            <a href="#contact" onClick="setearmembresia('Envero');" class="btn btn-primary js-scroll-trigger btn-suscribe">SUSCRIBITE</a>                           
+                            <a href="#contact" onClick="setearmembresia('MEMBRESIA ENVERO');" class="btn btn-primary js-scroll-trigger btn-suscribe">SUSCRIBITE</a>                           
                         </div>
                     </div>
                 </div>
@@ -180,10 +180,160 @@
                                 </div>
                             </diV> 
                             <br>
-                            <a href="#contact" onClick="setearmembresia('Cosecha');" class="btn btn-primary js-scroll-trigger btn-suscribe">SUSCRIBITE</a>                           
+                            <a href="#contact" onClick="setearmembresia('MEMBRESIA VENDIMIA');" class="btn btn-primary js-scroll-trigger btn-suscribe">SUSCRIBITE</a>                           
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact-->
+    <section class="page-section" id="contact">
+        <div class="card-overlay">
+            <div id="gracias" class="container" style="display: none">
+                <div class="row">
+                    <div class="col-md-12 txt-msj">
+                        <div class="text-center">
+                            <h2 class="section-heading text-uppercase" style="font-size: 2rem">¡Muchas gracias!</h2>
+                            <h3 class="section-subheading text-muted">A continuación podrás acceder al botón de pago para finalizar la suscripción.</h3>
+                        </div> 
+                        <div class="text-center">                           
+                            <a id="mediodepago" href="https://www.mercadopago.com/mla/debits/new?preapproval_plan_id=2c93808477ddcf340177dee284d902ea" class="btn btn-primary btn-xl">Pagar a través de Mercado Pago</a>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <div id="error" class="container" style="display: none">
+                <div class="row">
+                    <div class="col-md-12 txt-msj">
+                        <div class="text-center">
+                            <h2 class="section-heading text-uppercase" style="font-size: 2rem">Disculpe las molestias</h2>
+                            <h3 class="section-subheading text-muted">Tu memebresía no ha sido enviada correctamente. Por favor, intente de nuevo más tarde.</h3>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div id="formulario" class="container">
+                <div class="text-center">
+                    <h2 class="section-heading">Obtené tu membresía</h2><br>
+                    <h3 class="section-subheading text-muted" style="font-size: 1rem">Todos los meses una experiencia para todos los sentidos.</h3>
+                </div>                
+                <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                    <h3 class="section-subheading" style="margin-bottom: 10px">Datos personales:</h3>
+                    <div class="row">                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" name="Nombre" id="id_Nombre" type="text" placeholder="Nombre *" onkeyup="checkText(this)" maxlength="50"/>
+                                <p class="help-block text-danger">Por favor ingresá tu nombre completo.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="id_Apellido" name="Apellido" type="text" placeholder="Apellido *" onkeyup="checkText(this)" maxlength="50"/>
+                                <p class="help-block text-danger">Por favor ingresá tu apellido completo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" name="Email" id="id_Email" type="email" placeholder="Mail *" onkeyup="checkNosymbols(this)" maxlength="50"/>
+                                <p class="help-block text-danger">Por favor ingresá tu email.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="id_Telefono" name="Telefono" type="tel" placeholder="Teléfono *" onkeyup="checkNumeric(this)" maxlength="20"/>
+                                <p class="help-block text-danger">Por favor ingresá tu número telefónico.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="id_DNI" name="DNI" type="tel" placeholder="DNI *" onkeyup="checkNumeric(this)" maxlength="8" />
+                                <p class="help-block text-danger">Por favor ingresá tu número de DNI.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="section-subheading" style="margin-bottom: 10px">Datos de entrega:</h3>
+                    <div class="row">                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="id_Calle" name="Calle" type="text" placeholder="Calle *" onkeyup="checkNosymbols(this)" maxlength="50" data-validation-required-message="Por favor ingresá la dirección donde vivís." />
+                                <p class="help-block text-danger">Por favor ingresá tu dirección.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input class="form-control" id="id_Altura" name="Altura" type="tel" placeholder="Número *" onkeyup="checkNumeric(this)" maxlength="10"/>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input class="form-control" id="id_Piso" name="Piso" type="tel" placeholder="Piso / puerta " onkeyup="checkNosymbols(this)" maxlength="10"/>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="id_Codigo-Postal" name="Codigo-Postal" type="tel" placeholder="Código postal *" onkeyup="checkNumeric(this)" maxlength="10"/>
+                                <p class="help-block text-danger">Por favor ingresá el código postal de donde vivís.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="id_Ciudad" name="Ciudad" type="text" placeholder="Ciudad *" onkeyup="checkNosymbols(this)" maxlength="15" />
+                                <p class="help-block text-danger">Por favor ingresá la ciudad donde vivís.</p>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="id_Provincia" name="Provincia" type="text" placeholder="Provincia *" onkeyup="checkText(this)" maxlength="20" />
+                                <p class="help-block text-danger">Por favor ingresá la provincia donde vivís.</p>
+                            </div> 
+                        </div>
+                    </div>
+                    <h3 class="section-subheading" style="margin-bottom: 10px">Datos del producto:</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="form-control" id="id_Membresia" name="Membresia">
+                                    <option value="" disabled selected>Seleccioná el tipo de membresía *</option>   
+                                    <option value="MEMBRESIA BROTE">MEMBRESIA BROTE</option>
+                                    <option value="MEMBRESIA ENVERO">MEMBRESIA ENVERO</option>
+                                    <option value="MEMBRESIA VENDIMIA">MEMBRESIA VENDIMIA</option>
+                                </select>
+                                <p class="help-block text-danger">Por favor seleccioná el tipo de memebresía.</p>
+                            </div>   
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="form-control" id="id_Botellas" name="Botellas">
+                                    <option value="" disabled selected>Seleccioná cantidad de vinos *</option>   
+                                    <option value="3 Botellas">3 Botellas - $000</option>
+                                    <option value="4 Botellas">4 Botellas - $000</option>
+                                </select>
+                                <p class="help-block text-danger">Por favor seleccioná el tipo de memebresía.</p>
+                            </div>   
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <textarea class="form-control" id="id_Informacion" name="Informacion" placeholder="Información adicional para la entrega " onkeyup="checkNosymbols(this)"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br>                 
+                    <div class="text-center">
+                        <div id="success"></div>
+                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="button" onclick="validar();">Enviar y pagar solicitud</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -232,116 +382,6 @@
                         </ul>   
                     </div>                    
                 </div>  
-            </div>
-        </div>
-    </section>
-    <!-- Contact-->
-    <section class="page-section" id="contact">
-        <div class="card-overlay">
-            <div id="gracias" class="container" style="display: none">
-                <div class="row">
-                    <div class="col-md-12 txt-msj">
-                        <div class="text-center">
-                            <h2 class="section-heading text-uppercase" style="font-size: 2rem">¡Muchas gracias!</h2>
-                            <h3 class="section-subheading text-muted">A continuación podrás acceder al botón de pago para finalizar la suscripción.</h3>
-                        </div> 
-                        <div class="text-center">                           
-                            <a id="mediodepago" href="https://www.mercadopago.com/mla/debits/new?preapproval_plan_id=2c93808477ddcf340177dee284d902ea" class="btn btn-primary btn-xl">Pagar a través de Mercado Pago</a>
-                        </div>                        
-                    </div>
-                </div>
-            </div>
-            <div id="error" class="container" style="display: none">
-                <div class="row">
-                    <div class="col-md-12 txt-msj">
-                        <div class="text-center">
-                            <h2 class="section-heading text-uppercase" style="font-size: 2rem">Disculpe las molestias</h2>
-                            <h3 class="section-subheading text-muted">Tu memebresía no ha sido enviada correctamente. Por favor, intente de nuevo más tarde.</h3>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-            <div id="formulario" class="container">
-                <div class="text-center">
-                    <h2 class="section-heading">Obtené tu membresía</h2><br>
-                    <h3 class="section-subheading text-muted" style="font-size: 1rem">Todos los meses una experiencia para todos los sentidos.</h3>
-                </div>                
-                <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" name="Nombre" id="id_Nombre" type="text" placeholder="Nombre *" onkeyup="checkText(this)" maxlength="50"/>
-                                <p class="help-block text-danger">Por favor ingresá tu nombre completo.</p>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" id="id_Apellido" name="Apellido" type="text" placeholder="Apellido *" onkeyup="checkText(this)" maxlength="50"/>
-                                <p class="help-block text-danger">Por favor ingresá tu apellido completo.</p>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" name="Email" id="id_Email" type="email" placeholder="Mail *" onkeyup="checkNosymbols(this)" maxlength="50"/>
-                                <p class="help-block text-danger">Por favor ingresá tu email.</p>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" id="id_Telefono" name="Telefono" type="tel" placeholder="Teléfono *" onkeyup="checkNumeric(this)" maxlength="20"/>
-                                <p class="help-block text-danger">Por favor ingresá tu número telefónico.</p>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" id="id_DNI" name="DNI" type="tel" placeholder="DNI *" onkeyup="checkNumeric(this)" maxlength="8" />
-                                <p class="help-block text-danger">Por favor ingresá tu número de DNI.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">                            
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <input class="form-control" id="id_Calle" name="Calle" type="text" placeholder="Calle *" onkeyup="checkNosymbols(this)" maxlength="50" data-validation-required-message="Por favor ingresá la dirección donde vivís." />
-                                        <p class="help-block text-danger">Por favor ingresá tu dirección.</p>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input class="form-control" id="id_Altura" name="Altura" type="tel" placeholder="Número *" onkeyup="checkNumeric(this)" maxlength="10"/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input class="form-control" id="id_Piso" name="Piso" type="tel" placeholder="Piso / puerta " onkeyup="checkNosymbols(this)" maxlength="10"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" id="id_Codigo-Postal" name="Codigo-Postal" type="tel" placeholder="Código postal *" onkeyup="checkNumeric(this)" maxlength="10"/>
-                                <p class="help-block text-danger">Por favor ingresá el código postal de donde vivís.</p>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" id="id_Ciudad" name="Ciudad" type="text" placeholder="Ciudad *" onkeyup="checkNosymbols(this)" maxlength="15" />
-                                <p class="help-block text-danger">Por favor ingresá la ciudad donde vivís.</p>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" id="id_Provincia" name="Provincia" type="text" placeholder="Provincia *" onkeyup="checkText(this)" maxlength="20" />
-                                <p class="help-block text-danger">Por favor ingresá la provincia donde vivís.</p>
-                            </div> 
-                            <div class="form-group">
-                                <select class="form-control" id="id_Membresia" name="Membresia">
-                                    <option value="" disabled selected>Seleccioná el tipo de membresía *</option>   
-                                    <option value="MEMBRESIA BROTE X 3 BOTELLAS">MEMBRESIA BROTE X 3 BOTELLAS</option>
-                                    <option value="MEMBRESIA BROTE X 4 BOTELLAS">MEMBRESIA BROTE X 4 BOTELLAS</option>
-                                    <option value="MEMBRESIA ENVERO X 3 BOTELLAS">MEMBRESIA ENVERO X 3 BOTELLAS</option>
-                                    <option value="MEMBRESIA ENVERO X 4 BOTELLAS">MEMBRESIA ENVERO X 4 BOTELLAS</option>
-                                    <option value="MEMBRESIA VENDIMIA X 3 BOTELLAS">MEMBRESIA VENDIMIA X 3 BOTELLAS</option>
-                                    <option value="MEMBRESIA VENDIMIA X 4 BOTELLAS">MEMBRESIA VENDIMIA X 4 BOTELLAS</option>
-                                </select>
-                                <p class="help-block text-danger">Por favor seleccioná el tipo de memebresía.</p>
-                            </div>                            
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <textarea class="form-control" id="id_Informacion" name="Informacion" placeholder="Información adicional para la entrega " onkeyup="checkNosymbols(this)"></textarea>                                
-                            </div>
-                        </div>
-                    </div>
-                    <input id="membresia" style="display: none">
-                    <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="button" onclick="validar();">Enviar solicitud</button>
-                    </div>
-                </form>
             </div>
         </div>
     </section>

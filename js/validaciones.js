@@ -57,13 +57,13 @@ function isEmail(str){
 	 return true					
 }
 function setearmembresia(membresia){
-	document.getElementById("membresia").value = membresia
+	document.getElementById("id_Membresia").value = membresia
 }
 function validar(){
 	mostrargif()
 	envia = true
 	for(i=0; i<document.getElementsByClassName("form-control").length; i++){
-		if(i!=7 && i!=12){
+		if(i!=7 && i!=13){
 			switch(i){
 				case 2:
 					if(!isEmail(document.getElementsByClassName("form-control")[i].value)){
@@ -99,8 +99,9 @@ function validar(){
 	        data:$("#contactForm").serializeArray(),
 	        success: function(){
 	          gtag_report_conversion();
-	          document.getElementById("gracias").style.display = "block"
-			  document.getElementById("formulario").style.display = "none"
+	          //document.getElementById("gracias").style.display = "block"
+			  //document.getElementById("formulario").style.display = "none"
+			  window.location = "https://www.mercadopago.com/mla/debits/new?preapproval_plan_id=2c93808477ddcf340177dee284d902ea"
 	        },
 	        error: function(){
 	          document.getElementById("error").style.display = "block"
