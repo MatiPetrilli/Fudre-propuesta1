@@ -114,6 +114,13 @@ abbr[data-original-title] {
     #services .container {
         height: 63vh!important
     }
+    .iconspreheader{display: none}
+    .preheader{
+      padding: 0px 10px;
+    }
+    .preheader{font-size: 12px!important}
+.iconpreheader{font-size: 12px!important}
+.icon2preheader{font-size: 12px!important}
 }
 #services{
   text-align: center; color: #fff;background: url(../assets/img/header-bg2.jpg) #000;background-repeat: no-repeat;background-attachment: scroll;background-position: center center;background-size: cover;
@@ -10112,7 +10119,7 @@ img::-moz-selection {
 }
 
 #mainNav {
-  padding-top: 1rem;
+  padding-top: 4rem;
   padding-bottom: 1rem;
   background-color: #212529;
 }
@@ -10149,7 +10156,7 @@ img::-moz-selection {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
+    padding-top: 2.5rem;
     padding-bottom: 1.5rem;
     border: none;
     background-color: transparent;
@@ -10164,7 +10171,7 @@ img::-moz-selection {
     transition: height 0.3s ease-in-out;
   }
   #mainNav.navbar-shrink {
-    padding-top: 1rem;
+    padding-top: 3rem;
     padding-bottom: 1rem;
     background-color: #212529;
   }
@@ -10752,3 +10759,9 @@ if it's not present, don't show loader */
 .txt-msj{
   background: #212529bf; padding: 50px 20px;
 }
+.preheader{font-size: 11px; text-align: center; 
+    color: white;  margin-bottom: 5px; margin-top: 5px;    font-family: 'Droid Sans', Sans-serif;
+    letter-spacing: 0.2px;}
+.iconpreheader{font-size: 11px; color: white; margin-left:20px; margin-right:10px}
+.icon2preheader{font-size: 11px; color: white}
+.preheaderback{background: #7f654e; width: auto; position: fixed; right: 0; left: 0; top:0}
