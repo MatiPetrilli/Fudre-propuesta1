@@ -21,13 +21,13 @@
                 Botellas: " . $_POST['Botellas'] . "\n
                 Comentarios: " . $_POST['Informacion'] . "\n";
     
-    if(mail($to,$subject,$message)) {
-		header("Location: https://www.mercadopago.com/mla/debits/new?preapproval_plan_id=2c93808477ddcf340177dee284d902ea");
-        die();
-        //echo "The email message was sent.";
-    } else {
-        //echo "The email message NOT was sent.";
-    	header("Location: index.html");
-        die();
-    }
+    // if(mail($to,$subject,$message)) {
+		// header("Location: https://www.mercadopago.com/mla/debits/new?preapproval_plan_id=2c93808477ddcf340177dee284d902ea");
+        // die();
+        echo "Ok";
+    // } else {
+    //     echo "Error";
+    // 	// header("Location: index.html");
+    //     // die();
+    // }
 ?>

@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+    <!-- MercadoPago-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>Fudre Wine Club – Viví una nueva experiencia en el mundo del vino y unite al club.</title>
     <meta name="description" content="Disfrutá de los mejores vinos y bodegas todos los meses. Elegidos por especialistas y sommeliers. Membresías pensadas exclusivamente para vos." />
     <link rel="canonical" href="https://www.fudre.com.ar/index.html" />
@@ -29,6 +31,8 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     
+
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-189378358-1"></script>
     <script>
@@ -200,11 +204,9 @@
                     <div class="col-md-12 txt-msj">
                         <div class="text-center">
                             <h2 class="section-heading text-uppercase" style="font-size: 2rem">¡Muchas gracias!</h2>
-                            <h3 class="section-subheading text-muted">A continuación podrás acceder al botón de pago para finalizar la suscripción.</h3>
+                            <h3 class="section-subheading text-muted">Ya sos miembro de Fudre.</h3>
                         </div> 
-                        <div class="text-center">                           
-                            <a id="mediodepago" href="https://www.mercadopago.com/mla/debits/new?preapproval_plan_id=2c93808477ddcf340177dee284d902ea" class="btn btn-primary btn-xl">Pagar a través de Mercado Pago</a>
-                        </div>                        
+                                        
                     </div>
                 </div>
             </div>
@@ -335,10 +337,29 @@
                     </div>
                     <br>                 
                     <div class="text-center">
-                        <button style="display: none" type="submit" id="subbtn"></button>
                         <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="button" onclick="validar();">Enviar y pagar solicitud</button>
                     </div>
                 </form>
+
+                <!-- MercadoPago 3 botellas-->
+                <form action="procesarpago.php" method="POST">
+                    <script id="mercadopagopost"
+                      src="https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js"
+                      data-public-key="TEST-4937d87c-f364-4c67-9190-3256dbf5bd59"
+                      data-transaction-amount="1000.00">
+                    </script>
+                  </form>
+                  <!-- MercadoPago 4 botellas-->
+                  <form action="procesarpago.php" method="POST">
+                    <script id="mercadopagopost"
+                      src="https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js"
+                      data-public-key="TEST-4937d87c-f364-4c67-9190-3256dbf5bd59"
+                      data-transaction-amount="2000.00">
+                    </script>
+                  </form>
+                    
+                <!-- <div class="tokenizer-container" style="display: none;"></div> -->
+
             </div>
         </div>
     </section>
@@ -405,6 +426,10 @@
     </footer>
     <a href="https://wa.me/541131335201?text=Me%20gustaría%20saber%20sobre%20Fudre" class="whatsapp" onclick="gtag_report_conversion()" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
     
+
+    <!-- SDK Client-Side Mercado Pago -->
+    <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -446,6 +471,8 @@
       });
       return false;
     }
+    
+    
 </script>
 </body>
 </html>
