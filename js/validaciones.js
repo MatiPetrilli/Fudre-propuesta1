@@ -148,27 +148,32 @@ function getParameterByName(name){
 
 $( document ).ready(function() {
 	if(getParameterByName('status') != ''){
-	if(getParameterByName('status') == 'approved'){
-		document.getElementById("gracias").style.display = "block"
-		document.getElementById("formulario").style.display = "none"
-		//Aca volvemos a grabar en el drive porque se aprobo el pago.
-		$.ajax({
-			//post al drive
-	        url:'https://api.apispreadsheets.com/data/11465/',
-	        type:'post',
-	        data:sessionStorage.getItem('form'),
-	        success: function(){
-				// alert("se grabo correctamente")
-			},
-			error:function(){
-				// alert("No se grabo")
-			}
-		})
+		if(getParameterByName('status') == 'approved'){
+			document.getElementById("gracias").style.display = "block"
+			document.getElementById("formulario").style.display = "none"
+			//Aca volvemos a grabar en el drive porque se aprobo el pago.
+			$.ajax({
+				//post al drive
+		        url:'https://api.apispreadsheets.com/data/11465/',
+		        type:'post',
+		        data:sessionStorage.getItem('form'),
+		        success: function(){
+					// alert("se grabo correctamente")
+				},
+				error:function(){
+					// alert("No se grabo")
+				}
+			})
 
+		}
+		else {
+			document.getElementById("error").style.display = "block"
+			document.getElementById("formulario").style.display = "none"
+		}	
 	}
-	else {
-		document.getElementById("error").style.display = "block"
-		document.getElementById("formulario").style.display = "none"
-	}	
-}
+	if(getParameterByName('canal') == ''){
+		document.getElementById("Canal").value = "ORGANICO"
+	}else{
+		document.getElementById("Canal").value = getParameterByName('canal')
+	}
 });
