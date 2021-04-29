@@ -7,7 +7,7 @@
 
   require_once 'vendor/autoload.php';
 
-  MercadoPago\SDK::setAccessToken("APP_USR-7729808866587559-042423-8cee79c437520041fb7a70b14e542af8-148162511");
+  MercadoPago\SDK::setAccessToken("TEST-7729808866587559-042423-dcfce7af340ace96784ab796d49dcc85-148162511");
   //...
   $payment = new MercadoPago\Payment();
   $payment->transaction_amount = $_REQUEST['importe'];

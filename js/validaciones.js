@@ -103,7 +103,7 @@ function validar(){
 							}
 							var boton = document.createElement("script");
 							boton.src= "https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js"
-							boton.setAttribute("data-public-key","APP_USR-26044454-4c25-4f94-8f0c-76307fbb2948")
+							boton.setAttribute("data-public-key","TEST-4937d87c-f364-4c67-9190-3256dbf5bd59")
 							boton.setAttribute("data-summery-product-label","FUDRE")
 							boton.setAttribute("data-summery-product","FUDRE")
 							document.getElementById('mail_mercadopago').value = document.getElementById('id_Email').value
@@ -190,9 +190,6 @@ $( document ).ready(function() {
 			document.getElementById("error").style.display = "block"
 			document.getElementById("formulario").style.display = "none"
 		}	
-	}else{
-		document.getElementById("errorMercadoPago").style.display = "block"
-		document.getElementById("formulario").style.display = "none"
 	}
 	if(getParameterByName('canal') == ''){
 		document.getElementById("Canal").value = "ORGANICO"
