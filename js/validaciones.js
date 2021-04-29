@@ -87,32 +87,57 @@ function validar(){
 	if(envia){
 		sessionStorage.setItem('form', $( "#contactForm" ).serialize())
 		$.ajax({
-			//post al drive
+			//POST al drive:
 	        url:'https://api.apispreadsheets.com/data/11466/',
 	        type:'post',
 	        data:$("#contactForm").serializeArray(),
 	        success: function(){
 	          gtag_report_conversion();
-	          //document.getElementById("gracias").style.display = "block"
-			  //document.getElementById("formulario").style.display = "none"
-			//   window.location = "https://www.mercadopago.com/mla/debits/new?preapproval_plan_id=2c93808477ddcf340177dee284d902ea"
-			// document.getElementById("subbtn").click()
-
-			//Envio de mail
+			//Envio de mail:
 			$.post( "sendmail.php", $( "#contactForm" ).serialize() )
 					.done(function( data ) {
 						if(data=='Ok'){
-							//post a mercadopago
-							// document.getElementById('mercadopagopost')
-							//$('#mercadopagopost').attr('data-transaction-amount', $('select')[1].value.split("$")[1]);
-							if($('select')[1].value == "3 Botellas"){
-								//Paga tres botellas
-								document.getElementsByClassName('mercadopago-button')[0].click()
-							}else{
-								//Paga cuatro botellas
-								document.getElementsByClassName('mercadopago-button')[1].click()
+							//POST a MercadoPago:	
+							if(document.getElementsByClassName('mercadopago-button')[0] != undefined){
+								document.getElementsByClassName('mercadopago-button')[0].remove() 
 							}
-							
+							var boton = document.createElement("script");
+							boton.src= "https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js"
+							boton.setAttribute("data-public-key","APP_USR-26044454-4c25-4f94-8f0c-76307fbb2948")
+							boton.setAttribute("data-summery-product-label","FUDRE")
+							boton.setAttribute("data-summery-product","FUDRE")
+							document.getElementById('mail_mercadopago').value = document.getElementById('id_Email').value
+							document.getElementById('descripcion_mercadopago').value = $('select')[0].value +"-"+ $('select')[1].value
+							valormembresia = $("select")[0].value + " - " + $("select")[1].value
+							switch(valormembresia){
+								case "MEMBRESIA BROTE - 3 Botellas":
+									document.getElementById('importe_mercadopago').value = 1
+									boton.setAttribute("data-transaction-amount",document.getElementById('importe_mercadopago').value)
+								break;
+								case "MEMBRESIA BROTE - 4 Botellas":
+									document.getElementById('importe_mercadopago').value = 2
+									boton.setAttribute("data-transaction-amount",document.getElementById('importe_mercadopago').value)
+								break;
+								case "MEMBRESIA ENVERO - 3 Botellas":
+									document.getElementById('importe_mercadopago').value = 3
+									boton.setAttribute("data-transaction-amount",document.getElementById('importe_mercadopago').value)
+								break;
+								case "MEMBRESIA ENVERO - 4 Botellas":
+									document.getElementById('importe_mercadopago').value = 1
+									boton.setAttribute("data-transaction-amount",document.getElementById('importe_mercadopago').value)
+								break;
+								case "MEMBRESIA VENDIMIA - 3 Botellas":
+									document.getElementById('importe_mercadopago').value = 2
+									boton.setAttribute("data-transaction-amount",document.getElementById('importe_mercadopago').value)
+								break;
+								case "MEMBRESIA VENDIMIA - 4 Botellas":
+									document.getElementById('importe_mercadopago').value = 3
+									boton.setAttribute("data-transaction-amount",document.getElementById('importe_mercadopago').value)
+								break;
+							}
+							var form = $("form")[1]
+							form.appendChild(boton)
+							setTimeout(function(){ document.getElementsByClassName('mercadopago-button')[0].click() }, 500);
 						}      
 						else{
 						  document.getElementById("error").style.display = "block"
@@ -129,11 +154,7 @@ function validar(){
 	}
 }
 
-// // Agrega credenciales de SDK 
-window.Mercadopago.setPublishableKey("TEST-4937d87c-f364-4c67-9190-3256dbf5bd59");
-document.getElementsByClassName('mercadopago-button')[0].style.display='none'
-document.getElementsByClassName('mercadopago-button')[1].style.display='none'
-
+//document.getElementsByClassName('mercadopago-button')[0].style.display='none'
 
 function getParameterByName(name){
 	name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -151,9 +172,9 @@ $( document ).ready(function() {
 		if(getParameterByName('status') == 'approved'){
 			document.getElementById("gracias").style.display = "block"
 			document.getElementById("formulario").style.display = "none"
-			//Aca volvemos a grabar en el drive porque se aprobo el pago.
+			//Aca volvemos a grabar en el drive porque se aprobo el pago:
 			$.ajax({
-				//post al drive
+				//POST al drive
 		        url:'https://api.apispreadsheets.com/data/11465/',
 		        type:'post',
 		        data:sessionStorage.getItem('form'),
@@ -165,11 +186,13 @@ $( document ).ready(function() {
 				}
 			})
 
-		}
-		else {
+		}else {
 			document.getElementById("error").style.display = "block"
 			document.getElementById("formulario").style.display = "none"
 		}	
+	}else{
+		document.getElementById("errorMercadoPago").style.display = "block"
+		document.getElementById("formulario").style.display = "none"
 	}
 	if(getParameterByName('canal') == ''){
 		document.getElementById("Canal").value = "ORGANICO"

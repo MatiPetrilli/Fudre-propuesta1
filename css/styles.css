@@ -106,7 +106,25 @@ abbr[data-original-title] {
 .masthead-subtitle{
   background-color: #b3a790; font-size: 20px; font-family: 'Source Sans Pro', sans-serif; text-transform: uppercase; padding: 10px;letter-spacing: 2.5px;
 }
+#gracias{
+  margin-top: 20%
+}
+#error{
+  margin-top: 20%
+}
+#errorMercadoPago{
+  margin-top: 20%
+}
 @media (max-width:950px) {
+  #gracias{
+    margin-top: 0%!important
+  }
+  #error{
+    margin-top: 0%!important
+  }
+  #errorMercadoPago{
+    margin-top: 0%!important
+  }
     #services {
         background-size: 269%!important;
         padding: 0px!important
@@ -10611,6 +10629,7 @@ header.masthead .masthead-heading {
 }
 
 section#contact {
+  min-height: 100vh;
   padding: 0px;
   background-color: #212529;
   background-image: url(../assets/img/wines.jpg);
