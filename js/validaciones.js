@@ -51,6 +51,24 @@ function isEmail(str){
 }
 function setearmembresia(membresia){
 	document.getElementById("id_Membresia").value = membresia
+	actbotellas()
+}
+function actbotellas(){
+	membresia = document.getElementById("id_Membresia").value.split(" ")[1]
+	switch(membresia){
+		case "BROTE": 
+			document.getElementById("op1").innerText = "3 Botellas - $1.900"
+			document.getElementById("op2").innerText = "4 Botellas - $2.350"
+		break;
+		case "ENVERO":
+			document.getElementById("op1").innerText = "3 Botellas - $2.400"
+			document.getElementById("op2").innerText = "4 Botellas - $3.000"
+		break;
+		case "VENDIMIA":
+			document.getElementById("op1").innerText = "3 Botellas - $3.750"
+			document.getElementById("op2").innerText = "4 Botellas - $4.650"
+		break;
+	}
 }
 function validar(){
 	envia = true
@@ -111,27 +129,27 @@ function validar(){
 							valormembresia = $("select")[0].value + " - " + $("select")[1].value
 							switch(valormembresia){
 								case "MEMBRESIA BROTE - 3 Botellas":
-									document.getElementById('importe_mercadopago').value = 1
+									document.getElementById('importe_mercadopago').value = 1900
 									boton.setAttribute("data-transaction-amount",document.getElementById('importe_mercadopago').value)
 								break;
 								case "MEMBRESIA BROTE - 4 Botellas":
-									document.getElementById('importe_mercadopago').value = 2
+									document.getElementById('importe_mercadopago').value = 2350
 									boton.setAttribute("data-transaction-amount",document.getElementById('importe_mercadopago').value)
 								break;
 								case "MEMBRESIA ENVERO - 3 Botellas":
-									document.getElementById('importe_mercadopago').value = 3
+									document.getElementById('importe_mercadopago').value = 2400
 									boton.setAttribute("data-transaction-amount",document.getElementById('importe_mercadopago').value)
 								break;
 								case "MEMBRESIA ENVERO - 4 Botellas":
-									document.getElementById('importe_mercadopago').value = 1
+									document.getElementById('importe_mercadopago').value = 3000
 									boton.setAttribute("data-transaction-amount",document.getElementById('importe_mercadopago').value)
 								break;
 								case "MEMBRESIA VENDIMIA - 3 Botellas":
-									document.getElementById('importe_mercadopago').value = 2
+									document.getElementById('importe_mercadopago').value = 3750
 									boton.setAttribute("data-transaction-amount",document.getElementById('importe_mercadopago').value)
 								break;
 								case "MEMBRESIA VENDIMIA - 4 Botellas":
-									document.getElementById('importe_mercadopago').value = 3
+									document.getElementById('importe_mercadopago').value = 4650
 									boton.setAttribute("data-transaction-amount",document.getElementById('importe_mercadopago').value)
 								break;
 							}
