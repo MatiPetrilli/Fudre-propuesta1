@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
 </head>
 <body id="page-top">
-   <div class="loader"></div>    
+   <div class="se-pre-con"></div>
     <!-- Navigation-->  
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav"> 
         <div class="row preheaderback">
@@ -204,7 +204,7 @@
                     <div class="col-md-12 txt-msj">
                         <div class="text-center">
                             <h2 class="section-heading text-uppercase" style="font-size: 2rem">¡Muchas gracias!</h2>
-                            <h3 class="section-subheading text-muted">Ya sos miembro de Fudre.</h3>
+                            <h3 class="section-subheading text-muted">Tu pago se realizó correctamente. Ya sos miembro de Fudre.</h3>
                         </div> 
                                         
                     </div>
@@ -351,13 +351,106 @@
                         <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="button" onclick="validar();">Enviar y pagar solicitud</button>
                     </div>
                 </form>
-
-                <!-- MercadoPago -->
-                <form action="procesarpago.php" method="POST" style="display: none">
-                    <input name="mail_user" id="mail_mercadopago">
-                    <input name="descripcion" id="descripcion_mercadopago">
-                    <input name="importe" id="importe_mercadopago">
-                  </form>
+    <form action="/process_payment" method="post" id="paymentForm" style="display: none">
+    <h3 class="section-subheading" style="margin-bottom: 10px">Datos del titular de la Tarjeta:</h3>
+     <div class="row">                        
+          <div class="col-md-12">
+              <div class="form-group">
+                  <input class="form-control" id="email" name="email" type="text" type="text" placeholder="Mail *" onkeyup="checkNosymbols(this)" maxlength="50"/>
+                  <p class="help-block text-danger">Por favor ingresá el mail del titular de la tarjeta.</p>
+              </div>
+          </div>
+      </div>
+      <div class="row">                        
+          <div class="col-md-6">
+              <div class="form-group">
+                  <select class="form-control" id="docType" name="docType" data-checkout="docType" type="text">
+                  </select>
+                  <p class="help-block text-danger">Por favor seleccioná el tipo de documento.</p>
+              </div>   
+          </div>
+          <div class="col-md-6">
+              <div class="form-group">
+                  <input class="form-control" id="docNumber" name="docNumber" data-checkout="docNumber" type="text" placeholder="Num. documento *" onkeyup="checkNumeric(this)"/>
+                  <p class="help-block text-danger">Por favor ingresá tu número de documento.</p>
+              </div>
+          </div>
+      </div>
+      <div class="row">                        
+          <div class="col-md-6">
+            <h3 class="section-subheading" style="margin-bottom: 10px">Detalles de la tarjeta:</h3>
+              <div class="form-group">
+                  <input class="form-control" id="cardholderName" data-checkout="cardholderName" type="text" placeholder="Titular de la tarjeta *" onkeyup="checkText(this)" maxlength="50"/>
+                  <p class="help-block text-danger">Por favor ingresá el titular de la tarjeta.</p>
+              </div>
+          </div>
+           <div class="col-md-6">
+             <h3 class="section-subheading" style="margin-bottom: 10px">Fecha de vencimiento:</h3>
+              <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                      <input class="form-control" type="text" placeholder="MM" id="cardExpirationMonth" data-checkout="cardExpirationMonth"
+             onselectstart="return false" onpaste="return false"
+             oncopy="return false" oncut="return false"
+             ondrag="return false" ondrop="return false" autocomplete=off/>
+                    </div>
+                    <div class="col-md-1">
+                        <span class="date-separator" style="color: white;font-size: 40px;">/</span>
+                    </div>
+                    <div class="col-md-4">
+                      <input class="form-control" type="text" placeholder="YY" id="cardExpirationYear" data-checkout="cardExpirationYear"
+             onselectstart="return false" onpaste="return false"
+             oncopy="return false" oncut="return false"
+             ondrag="return false" ondrop="return false" autocomplete=off/>
+                    </div>
+                </div>
+                  <p class="help-block text-danger">Por favor ingresá la fecha de vencimiento.</p>
+              </div>
+          </div>
+      </div>
+       <div class="row">                        
+          <div class="col-md-6">
+              <div class="form-group">
+                  <input class="form-control" type="text" id="cardNumber" data-checkout="cardNumber"
+           onselectstart="return false" onpaste="return false"
+           oncopy="return false" oncut="return false"
+           ondrag="return false" ondrop="return false" autocomplete=off placeholder="Número de la tarjeta *" onkeyup="checkNumeric(this)"/>
+                  <p class="help-block text-danger">Por favor ingresá el número de la tarjeta.</p>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="form-group">
+                  <input class="form-control" placeholder="Código de seguridad *" id="securityCode" data-checkout="securityCode" type="text"
+           onselectstart="return false" onpaste="return false"
+           oncopy="return false" oncut="return false"
+           ondrag="return false" ondrop="return false" autocomplete=off onkeyup="checkNumeric(this)"/>
+                  <p class="help-block text-danger">Por favor ingresá el código de seguridad.</p>
+              </div>
+          </div>
+        </div>
+     
+       
+       <div id="issuerInput" style="display: none">
+         <label for="issuer">Banco emisor</label>
+         <select id="issuer" name="issuer" data-checkout="issuer"></select>
+       </div>
+       <div style="display: none">
+         <label for="installments">Cuotas</label>
+         <select type="text" id="installments" name="installments"></select>
+       </div>
+       <div style="display: none">
+         <input type="hidden" name="transactionAmount" id="transactionAmount" value="100" />
+         <input type="hidden" name="paymentMethodId" id="paymentMethodId" />
+         <input type="hidden" name="description" id="description" />
+         <br>
+        
+         <br>
+       </div>
+        <div class="text-center">
+             <button class="btn btn-primary btn-xl text-uppercase" type="submit">Pagar</button>
+        </div>
+   </div>
+ </form>
             </div>
         </div>
     </section>
@@ -424,15 +517,14 @@
     </footer>
     <a href="https://wa.me/541158696538?text=Me%20gustaría%20saber%20sobre%20Fudre" class="whatsapp" onclick="gtag_report_conversion()" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
     
-
-    <!-- SDK Client-Side Mercado Pago -->
+ <!-- MERCADO PAGO-->
     <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
-
     <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Third party plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+   
     <!-- Contact form JS-->
     <!--script src="assets/mail/jqBootstrapValidation.js"></script>
     <script src="assets/mail/contact_me.js"></script-->
