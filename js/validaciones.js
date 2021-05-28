@@ -1,5 +1,5 @@
 window.Mercadopago.getIdentificationTypes();
-window.Mercadopago.setPublishableKey("APP_USR-e896317d-7de2-440d-9a73-f51ce46503ad");
+window.Mercadopago.setPublishableKey("");
 function mostrargif(){
 	if(document.getElementsByClassName("se-pre-con")[0].style.display !="block"){
 	document.getElementsByClassName("se-pre-con")[0].style.display="block"}

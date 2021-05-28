@@ -12,7 +12,7 @@ curl_setopt($curl, CURLOPT_URL, $url);
 
 
 $headers = array(
-   "Authorization: Bearer APP_USR-8240036222472787-052817-a2f8fe6f8c718153d2ddb4d526faeae1-761715387",
+   "Authorization: Bearer ",
    "Content-Type: application/json",
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
