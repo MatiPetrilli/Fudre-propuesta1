@@ -204,7 +204,8 @@
                     <div class="col-md-12 txt-msj">
                         <div class="text-center">
                             <h2 class="section-heading text-uppercase" style="font-size: 2rem">¡Muchas gracias!</h2>
-                            <h3 class="section-subheading text-muted">Tu pago se realizó correctamente. Ya sos miembro de Fudre.</h3>
+                            <h3 class="section-subheading text-muted">Tu pago se realizó correctamente. Ya sos miembro de Fudre.<br><br>
+                            <span style="color: white;font-size: 12px; font-style: italic;">A continuación recibirás un correo con la confirmación y el detalle de tu suscripción.</span></h3>
                         </div> 
                                         
                     </div>
@@ -348,11 +349,12 @@
                     <br>                 
                     <div class="text-center">
                         <input style="display: none" name="Canal" id="Canal">
+                        <input style="display: none" name="Fecha" id="Fecha">
                         <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="button" onclick="validar();">Enviar y pagar solicitud</button>
                     </div>
                 </form>
     <form action="/process_payment" method="post" id="paymentForm" style="display: none">
-    <h3 class="section-subheading" style="margin-bottom: 10px">Datos del titular de la Tarjeta:</h3>
+    <h3 class="section-subheading" style="margin-bottom: 10px">Complete sus datos de Facturación:</h3>
      <div class="row">                        
           <div class="col-md-12">
               <div class="form-group">
@@ -380,8 +382,8 @@
           <div class="col-md-6">
             <h3 class="section-subheading" style="margin-bottom: 10px">Detalles de la tarjeta:</h3>
               <div class="form-group">
-                  <input class="form-control" id="cardholderName" data-checkout="cardholderName" type="text" placeholder="Titular de la tarjeta *" onkeyup="checkText(this)" maxlength="50"/>
-                  <p class="help-block text-danger">Por favor ingresá el titular de la tarjeta.</p>
+                  <input class="form-control" id="cardholderName" data-checkout="cardholderName" type="text" placeholder="Titular de la Tarjeta (tal cual figura en la tarjeta) *" onkeyup="checkText(this)" maxlength="50"/>
+                  <p class="help-block text-danger">Por favor ingresá el titular de la Tarjeta (tal cual figura en la tarjeta).</p>
               </div>
           </div>
            <div class="col-md-6">
@@ -447,7 +449,7 @@
          <br>
        </div>
         <div class="text-center">
-             <button class="btn btn-primary btn-xl text-uppercase" type="submit">Pagar</button>
+            <button class="btn btn-primary btn-xl text-uppercase" type="submit">Pagar</button>
         </div>
    </div>
  </form>

@@ -131,7 +131,7 @@ function validar(){
 						//POST a MercadoPago:	
 						document.getElementById("contactForm").style.display = "none"
 						document.getElementById("paymentForm").style.display = "block"
-						window.location = "#contact"
+						location.href = "#paymentForm";
 						valormembresia = $("select")[0].value + " - " + $("select")[1].value
 						switch(valormembresia){
 							case "MEMBRESIA BROTE - 3 Botellas":
@@ -156,20 +156,26 @@ function validar(){
 						
 					}      
 					else{
+						location.href = "#error";
 					  document.getElementById("error").style.display = "block"
 					  document.getElementById("formulario").style.display = "none"
-					}   
+					} 
+					nomostrargif()  
 				})
 				
 	        },
 	        error: function(){
+	        	nomostrargif()
+	        	location.href = "#error";
 	          document.getElementById("error").style.display = "block"
 			  document.getElementById("formulario").style.display = "none"
 			  
 	        }
 	    });
+	}else{
+		nomostrargif()
 	}
-	nomostrargif()
+	
 }
 
 //document.getElementsByClassName('mercadopago-button')[0].style.display='none'
@@ -237,6 +243,7 @@ function getCardToken(event){
 	if(document.getElementsByClassName("form-control")[19].value == "" && document.getElementsByClassName("form-control")[18].value == ""){
 		envia = false
 		document.getElementsByClassName("form-control")[19].parentElement.parentElement.parentElement.children[1].style.display = "block"
+		nomostrargif()
 		return false;
 	}else{
 		document.getElementsByClassName("form-control")[19].parentElement.parentElement.parentElement.children[1].style.display = "none"
@@ -271,6 +278,7 @@ function setCardTokenAndPay(status, response){
 		.done(function( data ) {
 			//alert(JSON.parse(data).message)
 			if(JSON.parse(data).status == 'authorized'){
+				location.href = "#gracias";
 			document.getElementById("gracias").style.display = "block"
 			document.getElementById("formulario").style.display = "none"
 			//Aca volvemos a grabar en el drive porque se aprobo el pago:
@@ -289,9 +297,17 @@ function setCardTokenAndPay(status, response){
 			})
 
 		}else {
+			location.href = "#errorMercadoPago";
 			document.getElementById("errorMercadoPago").style.display = "block"
 			document.getElementById("formulario").style.display = "none"
 			nomostrargif()
 		}	
 	})
 }
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today =  dd + '/' + mm + '/' + yyyy;
+document.getElementById("Fecha").value = today
