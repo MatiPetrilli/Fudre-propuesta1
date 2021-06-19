@@ -10071,7 +10071,7 @@ p {
 }
 
 .page-section {
-  padding: 9rem 1rem;
+  padding: 3rem 1rem;
 }
 .page-section h2.section-heading {
   font-size: 3rem;
@@ -10087,8 +10087,7 @@ p {
   font-weight: 400;
   font-family: 'Source Sans Pro', sans-serif; 
   text-transform: uppercase; 
-  margin-bottom: 4rem;
-  letter-spacing: 2.5px
+  letter-spacing: 4px
 }
 
 @media (min-width: 768px) {
@@ -10430,7 +10429,7 @@ header.masthead .masthead-heading {
   font-size: 14px; padding: 10px 30px;font-family: 'Crimson Text', serif;
 }
 #about{
-  background: #e4e1de;
+  background: #000;
 }
 #about h3{
   color: black; 
@@ -10792,3 +10791,17 @@ if it's not present, don't show loader */
 .iconpreheader{font-size: 11px; color: white; margin-left:20px; margin-right:10px}
 .icon2preheader{font-size: 11px; color: white}
 .preheaderback{background: #7f654e; width: auto; position: fixed; right: 0; left: 0; top:0}
+.desc-membresia{
+  font-size: 10px;font-style: italic;margin-bottom: 4rem;
+}
+.logo-title{
+  width:10%
+}
+@media(max-width: 750px){
+  .logo-title{
+    width:50%!important
+  } 
+  .folleto-par{
+    margin-top: 40px
+  }
+}
