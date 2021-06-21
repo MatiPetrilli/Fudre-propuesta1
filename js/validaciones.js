@@ -68,16 +68,16 @@ function actbotellas(){
 	membresia = document.getElementById("id_Membresia").value.split(" ")[1]
 	switch(membresia){
 		case "BROTE": 
-			document.getElementById("op1").innerText = "3 Botellas - $1.900"
-			document.getElementById("op2").innerText = "4 Botellas - $2.350"
+			document.getElementById("op1").innerText = "3 Botellas - $1.965"
+			document.getElementById("op2").innerText = "4 Botellas - $2.420"
 		break;
 		case "ENVERO":
-			document.getElementById("op1").innerText = "3 Botellas - $2.400"
-			document.getElementById("op2").innerText = "4 Botellas - $3.000"
+			document.getElementById("op1").innerText = "3 Botellas - $2.430"
+			document.getElementById("op2").innerText = "4 Botellas - $3.080"
 		break;
 		case "VENDIMIA":
-			document.getElementById("op1").innerText = "3 Botellas - $3.750"
-			document.getElementById("op2").innerText = "4 Botellas - $4.650"
+			document.getElementById("op1").innerText = "3 Botellas - $3.810"
+			document.getElementById("op2").innerText = "4 Botellas - $4.760"
 		break;
 	}
 }
