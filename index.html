@@ -89,12 +89,13 @@
             </div>
             <div class="col-md-3"></div>
         </div> 
-        <a class="navbar-brand js-scroll-trigger d-lg-none" href="#page-top"><img src="assets/img/logo.png" alt="" /></a>
+        <a class="navbar-brand js-scroll-trigger d-lg-none" href="https://www.fudre.com.ar"><img src="assets/img/logo.png" alt="" /></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fa fa-bars ml-1"></i></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase mx-auto">
-                <li class="nav-item" style="margin-right: 6rem;"><a class="nav-link js-scroll-trigger" href="#contact"><strong>Quiero ser parte</strong></a></li>
-                <a class="d-none d-lg-block" href="#"><img src="assets/img/logo.png" width="50%" style="margin:auto; display: block"></a>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact"><strong>Quiero ser parte</strong></a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://www.fudre.com.ar">Tienda de vinos</a></li>
+                <a class="d-none d-lg-block" href="https://www.fudre.com.ar"><img src="assets/img/logo.png" width="50%" style="margin:auto; display: block"></a>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Membresías</a></li>                
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Preguntas frecuentes</a></li>
             </ul>
@@ -203,9 +204,9 @@
                 <div class="row">
                     <div class="col-md-12 txt-msj">
                         <div class="text-center">
-                            <h2 class="section-heading text-uppercase" style="font-size: 2rem">¡Muchas gracias!</h2>
+                            <h2 class="section-heading text-uppercase" style="font-size: 2rem">¡Bienvenido al Club!</h2>
                             <h3 class="section-subheading text-muted">Tu pago se realizó correctamente. Ya sos miembro de Fudre.<br><br>
-                            <span style="color: white;font-size: 12px; font-style: italic;">A continuación recibirás un correo con la confirmación y el detalle de tu suscripción.</span></h3>
+                            <span style="color: white;font-size: 12px; font-style: italic;">Ahora que sos parte del Club Fudre, accedé a un 10% de descuento en toda la tienda de vinos con tu código SOCIOS10, <a href="https://www.fudre.com.ar" style="font-weight: bold">ingresando aquí.</a></span></h3>
                         </div> 
                                         
                     </div>
@@ -289,7 +290,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input class="form-control" id="id_Piso" name="Piso" type="tel" placeholder="Piso / puerta " onkeyup="checkNosymbols(this)" maxlength="10"/>
+                                <input class="form-control" id="id_Piso" name="Piso" type="text" placeholder="Piso / puerta " onkeyup="checkNosymbols(this)" maxlength="10"/>
                             </div>
                         </div>                        
                     </div>
@@ -350,7 +351,7 @@
                     <div class="text-center">
                         <input style="display: none" name="Canal" id="Canal">
                         <input style="display: none" name="Fecha" id="Fecha">
-                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="button" onclick="validar();">Enviar y pagar solicitud</button>
+                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="button" onclick="validar();">Continuar</button>
                     </div>
                 </form>
     <form action="/process_payment" method="post" id="paymentForm" style="display: none">

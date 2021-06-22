@@ -10141,11 +10141,7 @@ img::-moz-selection {
   padding-bottom: 1rem;
   background-color: #212529;
 }
-@media (max-width: 750px){
-  #mainNav {
-    padding-top: 1rem!important;
-  }
-}
+
 #mainNav .navbar-toggler {
   padding: 0.75rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -10449,7 +10445,7 @@ header.masthead .masthead-heading {
   font-weight: bold
 }
 #about .answer{
-  font-size: 14px!important;
+  font-size: 18px!important;
   font-family: 'Crimson Text', serif;
 }
 .timeline {
@@ -10789,6 +10785,6 @@ if it's not present, don't show loader */
 .preheader{font-size: 11px; text-align: center; 
     color: white;  margin-bottom: 5px; margin-top: 5px;    font-family: 'Droid Sans', Sans-serif;
     letter-spacing: 0.2px;}
-.iconpreheader{font-size: 11px; color: white; margin-left:20px; margin-right:10px}
-.icon2preheader{font-size: 11px; color: white}
+.iconpreheader{font-size: 15px; color: white; margin-left:20px; margin-right:10px}
+.icon2preheader{font-size: 15px; color: white}
 .preheaderback{background: #7f654e; width: auto; position: fixed; right: 0; left: 0; top:0}
