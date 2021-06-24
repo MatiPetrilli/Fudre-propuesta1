@@ -1,173 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!doctype html>
+<html lang="nl">
 <head>
-    <meta charset="utf-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
-    <!-- MercadoPago-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <title>Fudre Wine Club – Viví una nueva experiencia en el mundo del vino y unite al club.</title>
-    <meta name="description" content="Disfrutá de los mejores vinos y bodegas todos los meses. Elegidos por especialistas y sommeliers. Membresías pensadas exclusivamente para vos." />
-    <link rel="canonical" href="https://www.fudre.com.ar/index.html" />
-    <meta itemprop="title" content="Fudre Wine Club – Viví una nueva experiencia en el mundo del vino y unite al club." />
-    <meta name="twitter:title" content="Fudre Wine Club – Viví una nueva experiencia en el mundo del vino y unite al club." />
-    <meta property="og:title" content="Fudre Wine Club – Viví una nueva experiencia en el mundo del vino y unite al club." />
-    <meta property="og:url" content="https://www.fudre.com.ar/index.html" />
-    <meta property="og:type" content="website" />
-    <meta itemprop="description" content="Disfrutá de los mejores vinos y bodegas todos los meses. Elegidos por especialistas y sommeliers. Membresías pensadas exclusivamente para vos." />
-    <meta name="twitter:description" content="Disfrutá de los mejores vinos y bodegas todos los meses. Elegidos por especialistas y sommeliers. Membresías pensadas exclusivamente para vos." />
-    <meta property="og:description" content="Disfrutá de los mejores vinos y bodegas todos los meses. Elegidos por especialistas y sommeliers. Membresías pensadas exclusivamente para vos." />
-    <meta name="twitter:card" content="summary" />
-    <meta itemprop="image" content="/common/social/logo/Portrait-736x1128px.jpg" />
-    <!--setear las imagenes correspondientes -->
-    <meta name="twitter:image" content="/common/social/logo/Square-1200x1200px.jpg" />
-    <meta property="og:image" content="/common/social/logo/Square-1200x1200px.jpg" />
-    <link rel="icon" type="image/x-icon" href="assets/img/fudre.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    
+  <meta charset="UTF-8">
+  <title>Home - Corse e Strada</title>
+ 
 </head>
-<body id="page-top">
-	<form action="/process_payment" method="post" id="paymentForm">
-   <h3>Detalles del comprador</h3>
-     <div>
-       <div>
-         <label for="email">E-mail</label>
-         <input id="email" name="email" type="text" value="test@test.com"/>
-       </div>
-       <div>
-         <label for="docType">Tipo de documento</label>
-         <select id="docType" name="docType" data-checkout="docType" type="text">
-         </select>
-       </div>
-       <div>
-         <label for="docNumber">Número de documento</label>
-         <input id="docNumber" name="docNumber" data-checkout="docNumber" type="text"/>
-       </div>
-     </div>
-   <h3>Detalles de la tarjeta</h3>
-     <div>
-       <div>
-         <label for="cardholderName">Titular de la tarjeta</label>
-         <input id="cardholderName" data-checkout="cardholderName" type="text">
-       </div>
-       <div>
-         <label for="">Fecha de vencimiento</label>
-         <div>
-           <input type="text" placeholder="MM" id="cardExpirationMonth" data-checkout="cardExpirationMonth"
-             onselectstart="return false" onpaste="return false"
-             oncopy="return false" oncut="return false"
-             ondrag="return false" ondrop="return false" autocomplete=off>
-           <span class="date-separator">/</span>
-           <input type="text" placeholder="YY" id="cardExpirationYear" data-checkout="cardExpirationYear"
-             onselectstart="return false" onpaste="return false"
-             oncopy="return false" oncut="return false"
-             ondrag="return false" ondrop="return false" autocomplete=off>
-         </div>
-       </div>
-       <div>
-         <label for="cardNumber">Número de la tarjeta</label>
-         <input type="text" id="cardNumber" data-checkout="cardNumber"
-           onselectstart="return false" onpaste="return false"
-           oncopy="return false" oncut="return false"
-           ondrag="return false" ondrop="return false" autocomplete=off>
-       </div>
-       <div>
-         <label for="securityCode">Código de seguridad</label>
-         <input id="securityCode" data-checkout="securityCode" type="text"
-           onselectstart="return false" onpaste="return false"
-           oncopy="return false" oncut="return false"
-           ondrag="return false" ondrop="return false" autocomplete=off>
-       </div>
-       <div id="issuerInput">
-         <label for="issuer">Banco emisor</label>
-         <select id="issuer" name="issuer" data-checkout="issuer"></select>
-       </div>
-       <div>
-         <label for="installments">Cuotas</label>
-         <select type="text" id="installments" name="installments"></select>
-       </div>
-       <div>
-         <input type="hidden" name="transactionAmount" id="transactionAmount" value="100" />
-         <input type="hidden" name="paymentMethodId" id="paymentMethodId" />
-         <input type="hidden" name="description" id="description" />
-         <br>
-         <button type="submit">Pagar</button>
-         <br>
-       </div>
-   </div>
- </form>
-	<script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
-	  <!-- Bootstrap core JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-	<script type="text/javascript">
+
+<body>
+	<div class="video-container">
+	  <video autoplay loop="true" width="1280" height="720" muted playsinline src="assets/img/pexels-cottonbro-5537827.mp4">
+	  </video>
+	</div>
+
+<div id="page">
 
 
-		window.Mercadopago.getIdentificationTypes();
-	var data	
-window.Mercadopago.setPublishableKey("APP_USR-26044454-4c25-4f94-8f0c-76307fbb2948");
-document.getElementById('paymentForm').addEventListener('submit', getCardToken);
-function getCardToken(event){
-   event.preventDefault();
-   
-       let $form = document.getElementById('paymentForm');
-       window.Mercadopago.createToken($form, setCardTokenAndPay);
-       return false;
-   
-};
-function setCardTokenAndPay(status, response){
+
 	
-	/* data = {
-   "preapproval_plan_id":"2c938084726e18d60172720000000000",
-   "card_token_id":response.id,
-   "payer_email":"matias_petrilli@hotmail.com"
-   
-}*/
-$.post( "pruebaenvio.php", "card_token_id="+response.id+"&payer_email=matias_petrilli@hotmail.com" )
-					.done(function( data ) {
-						alert(data)
-					})
-/*$.ajax({
-    url: "https://api.mercadopago.com/preapproval",
-    beforeSend: function(xhr) { 
-      xhr.setRequestHeader("Authorization", "Bearer APP_USR-7729808866587559-042423-8cee79c437520041fb7a70b14e542af8-148162511"); 
-      xhr.setRequestHeader("Access-Control-Allow-Origin", '*');
-    },
-    type: 'POST',
-    dataType: 'json',
-    contentType: 'application/json',
-    processData: false,
-    data: JSON.stringify(data),
-    success: function (data) {
-      alert(JSON.stringify(data));
-    },
-    error: function(){
-      alert("Cannot get data");
-    }
-});
+  <div id="main" role="main">
+  	<div class="inner">
 
-$.ajax({
-        url: 'https://api.mercadopago.com/preapproval',
-        data:data,
-        beforeSend: function(xhr) {
-             xhr.setRequestHeader("Authorization", "Bearer APP_USR-7729808866587559-042423-8cee79c437520041fb7a70b14e542af8-148162511")
-        }, success: function(data){
-            alert(data);
-            //process the JSON data etc
-        }
-})*/
-}
+			<div class="visuallyhidden">
+				<p>We are enthousiast who bring cars, both rare historic Ferrari competition cars, and unique historic GT sports cars of mainly Italian brands into A PROJECT to bring each car into an <strong>original and period correct condition</strong>, with unrivalled attention to rebuilding the cars on the level of chassis, body, interior, engine, gearbox and electronics. Each job is carried out by <strong>true specialists</strong> sharing the same passion and having an paying attention to all deatils as we are.<br />
+We focus exclusively on modern Ferrari racers, cars which are extremely desirable works- and semi-works cars with accessible technology.</p>			</div>
 
+    </div>
+  </div>
+</div>
 
+  
 
-	</script>
 </body>
 </html>
