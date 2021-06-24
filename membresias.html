@@ -86,7 +86,7 @@
     justify-content: center;
   }
   .img-mem-folleto{
-    width:85%
+    width:100%
   }
   @media (max-width: 750px){
 
@@ -95,6 +95,28 @@
      width:100%!important
   } 
   }
+
+  video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+
+.viewport-header {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
     </style>
 </head>
 <body id="page-top">
@@ -112,22 +134,19 @@
         </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead">
-    </header>
-    <!-- Services-->
-    <section class="page-section" id="services" style="background-image: url(assets/img/header-bg3.jpg)!important;
-    min-height: 500px!important;
-    background-position: center!important;
-    background-repeat: no-repeat!important;
-    background-size: cover!important;">
-        <div class="container">
+    
+    <video style="z-index: -1" src="assets/img/pexels-cottonbro-5537827.mp4" autoplay loop playsinline muted></video>
+
+<header class="viewport-header page-section">
+  <div class="container">
             <div class="community-images">
-                <div class="col-md-3"><a href="brote.html"><img src="assets/img/logos/brote.png" class="img-mem-folleto" /></a></div>
-                <div class="col-md-3"><a href="envero.html"><img src="assets/img/png/envero.png" class="img-mem-folleto"/></a></div>
-                <div class="col-md-3"><a href="vendimia.html"><img src="assets/img/png/vendimia.png" class="img-mem-folleto"/></a></div>
+                <div class="col-md-3"><a href="brote.html"><img src="assets/img/membresia-brote.png" class="img-mem-folleto" /></a></div>
+                <div class="col-md-3"><a href="envero.html"><img src="assets/img/membresia-envero.png" class="img-mem-folleto"/></a></div>
+                <div class="col-md-3"><a href="vendimia.html"><img src="assets/img/membresia-vendimia.png" class="img-mem-folleto"/></a></div>
             </div>
         </div>
-    </section>
+</header>
+   
 
     <!-- Footer-->
     <footer class="footer py-4">
