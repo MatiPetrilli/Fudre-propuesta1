@@ -18,11 +18,8 @@
     <meta name="twitter:description" content="Disfrutá de los mejores vinos y bodegas todos los meses. Elegidos por especialistas y sommeliers. Membresías pensadas exclusivamente para vos." />
     <meta property="og:description" content="Disfrutá de los mejores vinos y bodegas todos los meses. Elegidos por especialistas y sommeliers. Membresías pensadas exclusivamente para vos." />
     <meta name="twitter:card" content="summary" />
-    <meta itemprop="image" content="/common/social/logo/Portrait-736x1128px.jpg" />
-    <!--setear las imagenes correspondientes -->
-    <meta name="twitter:image" content="/common/social/logo/Square-1200x1200px.jpg" />
-    <meta property="og:image" content="/common/social/logo/Square-1200x1200px.jpg" />
-    <link rel="icon" type="image/x-icon" href="assets/img/fudre.ico" />
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/fudre.ico" />
     <!-- Font Awesome icons (free version)-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
@@ -69,7 +66,7 @@
     /></noscript>
     <!-- End Facebook Pixel Code -->
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
@@ -106,6 +103,7 @@ font-size: 16px!important
   }
 
  .video-container {
+    z-index: -1;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -122,8 +120,18 @@ font-size: 16px!important
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+        width: 608px;
+    aspect-ratio: auto 608 / 720;
+    height: 720px;
 }
-
+.viewport-header {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
     </style>
 </head>
@@ -132,34 +140,33 @@ font-size: 16px!important
     <!-- Navigation-->  
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav"> 
         <!-- <a class="navbar-brand js-scroll-trigger d-lg-none" href="#page-top"><img src="assets/img/png/envero.png" alt="" /></a> -->
-     <a class="navbar-brand js-scroll-trigger d-lg-none" href="#page-top"><img src="assets/img/logo.png" alt="" /></a>
+     <a class="navbar-brand js-scroll-trigger d-lg-none" href="#page-top"><img src="../assets/img/logo.png" alt="" /></a>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase mx-auto">
                 
-                <a class="d-none d-lg-block" href="#"><img src="assets/img/logo.png" width="50%" style="margin:auto; display: block"></a>
+                <a class="d-none d-lg-block" href="#"><img src="../assets/img/logo.png" width="50%" style="margin:auto; display: block"></a>
              
             </ul>
         </div>
     </nav>
    
  <div class="video-container">
-
-    <video autoplay loop="true" width="1280" height="720" muted playsinline src="assets/img/video/pexels-cottonbro-5537824.mp4">
-      </video>
+    <video autoplay loop="true" width="1280" height="720" muted playsinline src="https://membresias.fudre.com.ar/assets/img/video/pexels-cottonbro-5537824.mp4"></video>
 </div>
+    
     
    
 
-<header class="viewport-header page-section">
+<header class="viewport-header page-section" >
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading">¿Que membresia sos?</h2>
             <h3 class="section-subheading text-muted">elecciona tu membresia y conocé el contenido de tu caja</h3>
         </div>
         <div class="community-images">
-            <div class="col-md-3"><a href="brote.html"><img src="assets/img/membresia-brote.png" class="img-mem-folleto" /></a></div>
-            <div class="col-md-3"><a href="envero.html"><img src="assets/img/membresia-envero.png" class="img-mem-folleto"/></a></div>
-            <div class="col-md-3"><a href="vendimia.html"><img src="assets/img/membresia-vendimia.png" class="img-mem-folleto"/></a></div>
+            <div class="col-md-3"><a href="brote.html"><img src="../assets/img/membresia-brote.png" class="img-mem-folleto" /></a></div>
+            <div class="col-md-3"><a href="envero.html"><img src="../assets/img/membresia-envero.png" class="img-mem-folleto"/></a></div>
+            <div class="col-md-3"><a href="vendimia.html"><img src="../assets/img/membresia-vendimia.png" class="img-mem-folleto"/></a></div>
         </div>
     </div>
 </header>
@@ -192,7 +199,7 @@ font-size: 16px!important
     <!--script src="assets/mail/jqBootstrapValidation.js"></script>
     <script src="assets/mail/contact_me.js"></script-->
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="../js/scripts.js"></script>
     <!-- Event snippet for Botón Whatsapp conversion page
     In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
