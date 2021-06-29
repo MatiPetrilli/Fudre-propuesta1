@@ -301,21 +301,50 @@
                                 <p class="help-block text-danger">Por favor ingresá el código postal de donde vivís.</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                     <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" id="id_Ciudad" name="Ciudad" type="text" placeholder="Ciudad *" onkeyup="checkNosymbols(this)" maxlength="15" />
-                                <p class="help-block text-danger">Por favor ingresá la ciudad donde vivís.</p>
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" id="id_Provincia" name="Provincia" type="text" placeholder="Provincia *" onkeyup="checkText(this)" maxlength="20" />
+                                <select id="provincia" name="Provincia" class="form-control" onchange="selectLocalidad();">
+                                    <option value="Buenos Aires">Buenos Aires</option>
+                                    <option value="Catamarca">Catamarca</option>    
+                                    <option value="Chaco">Chaco</option>
+                                    <option value="Chubut">Chubut</option>
+                                    <option value="Ciudad Autónoma de Buenos Aires">Ciudad Autónoma de Buenos Aires</option>
+                                    <option value="Córdoba">Córdoba</option>
+                                    <option value="Corrientes">Corrientes</option>
+                                    <option value="Entre Ríos">Entre Ríos</option>
+                                    <option value="Formosa">Formosa</option>
+                                    <option value="Jujuy">Jujuy</option>
+                                    <option value="La Pampa">La Pampa</option>
+                                    <option value="La Rioja">La Rioja</option>
+                                    <option value="Mendoza">Mendoza</option>
+                                    <option value="Misiones">Misiones</option>
+                                    <option value="Neuquén">Neuquén</option>
+                                    <option value="Río Negro">Río Negro</option>
+                                    <option value="Salta">Salta</option>
+                                    <option value="San Luis">San Luis</option>
+                                    <option value="Santa Cruz">Santa Cruz</option>
+                                    <option value="Santa Fe">Santa Fe</option>
+                                    <option value="Santiago del Estero">Santiago del Estero</option>
+                                    <option value="Tierra del Fuego, Antártida e Islas del Atlántico Sur">Tierra del Fuego</option>
+                                    <option disabled="true" selected="true" value="">Seleccionar una Provincia</option>
+                                </select>
                                 <p class="help-block text-danger">Por favor ingresá la provincia donde vivís.</p>
                             </div> 
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                 <select id="localidades" name="Ciudad" class="form-control">
+                                    <option disabled="true" selected="true" value="">Seleccionar una Localidad</option>
+                                </select>                                
+                                <p class="help-block text-danger">Por favor ingresá la ciudad donde vivís.</p>
+                            </div>
+                        </div> 
+                    </div>
+                    
+                    
+
                     <h3 class="section-subheading" style="margin-bottom: 10px">Datos del producto:</h3>
                     <div class="row">
                         <div class="col-md-6">
@@ -536,6 +565,7 @@
     <script src="js/validaciones.js"></script>
     <!-- Event snippet for Botón Whatsapp conversion page
     In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    
     <script>
     function gtag_report_conversion(url) {
       var callback = function () {

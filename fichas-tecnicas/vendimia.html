@@ -71,211 +71,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
-    <style>
-                .productRatingStars .rating {
-  display: inline-flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-}
-.productRatingStars .rating input {
-  display: none;
-  margin: 0;
-}
-
-.productRatingStars .rating input:checked + label:after {
-  content: attr(data-label);
-}
-
-.productRatingStars .rating label {
-  white-space: nowrap;
-  width: 30px;
-  display: inline-block;
-  padding-left: 0;
-  cursor: pointer;
-}
-.productRatingStars .rating label:before {
-  display: block;
-  font-size: 30px;
-}
-.productRatingStars .rating label:after {
-  display: none;
-  position: absolute;
-  left: 15px;
-  top: 75px;
-}
-.productRatingStars .rating label:hover {
-  visibility: visible;
-}
-
-.productRatingStars .rating label:hover:after {
-  content: attr(data-label);
-}
-
-
-svg {
-
-}
-
-.wine {
-  order: 2;
-}
-
-.wine svg {
-  height: 30px;
-}
-
-.beer {
-  order: 1;
-}
-
-.beer svg {
-  height: 150px;
-}
-
-.whisky {
-  order: 3;
-}
-
-.whisky svg {
-  height: 80px;
-}
-
-.alcopop {
-  order: 4;
-}
-
-.alcopop svg {
-  height: 180px;
-}
-
-.wine svg rect:nth-of-type(1) {
-  fill: #874640;
-}
-
-.wine svg rect:nth-of-type(2) {
-  fill: #AA6F65;
-}
-
-.wine svg rect:nth-of-type(3) {
-  fill: #874640;
-}
-
-.wine svg rect:nth-of-type(4) {
-  fill: #751D19;
-}
-
-.beer svg rect:nth-of-type(1) {
-  fill: #DB9E36;
-}
-
-.beer svg rect:nth-of-type(2) {
-  fill: #FFD24E;
-}
-
-.beer svg rect:nth-of-type(3) {
-  fill: #DB9E36;
-}
-
-.beer svg rect:nth-of-type(4) {
-  fill: #BF7335;
-}
-
-.beer svg rect:nth-of-type(5) {
-  fill: #fff;
-  opacity: 0.6;
-}
-
-.whisky svg rect:nth-of-type(1) {
-  fill: #DB9E36;
-}
-
-.whisky svg rect:nth-of-type(2) {
-  fill: #FFD24E;
-}
-
-.whisky svg rect:nth-of-type(3) {
-  fill: #DB9E36;
-}
-
-.whisky svg rect:nth-of-type(4) {
-  fill: #BF7335;
-}
-
-.alcopop svg rect:nth-of-type(1) {
-  fill: #4095B0;
-}
-
-.alcopop svg rect:nth-of-type(2) {
-  fill: #77BEC9;
-}
-
-.alcopop svg rect:nth-of-type(3) {
-  fill: #4095B0;
-}
-
-.alcopop svg rect:nth-of-type(4) {
-  fill: #34839E;
-}
-
-@media screen and (max-width: 1100px) {
-  .drinks-container {
-    width: 500px;
-  }
-
-  .drink:nth-of-type(3) {
-    clear: both;
-  }
-}
-@media screen and (max-width: 600px) {
-  .drinks-container {
-    width: 80%;
-    margin-bottom: 50px;
-  }
-
-  .drink {
-    clear: both;
-    width: 100%;
-    position: static;
-    height: auto;
-  }
-
-  svg {
-    height: auto;
-    width: 100%;
-    position: static;
-   
-  }
-}
-.rating p{
-    font-size: 10px;
-    color: white;
-    font-style: italic;
-    position: relative;
-    left: -30%;
-}
-
-::-webkit-input-placeholder { /* Edge */
-  color: lightgrey!important;
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: lightgrey!important;
-}
-
-::placeholder {
-  color: lightgrey!important;
-}
-@media (max-width: 750px){
-    #portfolio{
-        height: 290vh!important;
-    }
-}
-#fixedbutton {
-    position: fixed;
-    bottom: 0px;
-    right: 0px; 
-}
-    </style>
+  
 </head>
 <body id="page-top">
     <!-- Navigation-->  
@@ -310,13 +106,39 @@ svg {
     </section>
 
     <!-- About-->
-    <section class="page-section" id="about">
+   <section class="page-section" id="about">
         <div class="container">
+           <div id="gracias" class="container" style="display: none">
+                <div class="row">
+                    <div class="col-md-12 txt-msj">
+                        <div class="text-center">
+                            <h2 class="section-heading text-uppercase" style="color: white; font-size: 2rem">¡Muchas gracias por responder!</h2>
+                            <h3 class="section-subheading text-muted"><br>
+                            <span style="color: white;font-size: 12px; font-style: italic;">Accedé a un 10% de descuento en toda la tienda de vinos con tu código SOCIOS10, <a href="https://www.fudre.com.ar" style="font-weight: bold">ingresando aquí.</a></span></h3>
+                        </div> 
+                                        
+                    </div>
+                </div>
+            </div>
+            <div id="error" class="container" style="display: none">
+                <div class="row">
+                    <div class="col-md-12 txt-msj">
+                        <div class="text-center">
+                            <h2 class="section-heading text-uppercase" style="color: white; font-size: 2rem">Disculpe las molestias</h2>
+                            <h3 class="section-subheading text-muted">Tus respuestas no han sido enviadas correctamente. Por favor, intente de nuevo más tarde.</h3>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div id="formulario">
             <div class="text-center">
                 <h2 class="section-heading" style="color: white">Contanos tu experiencia</h2>
                 <!--h3 class="section-subheading text-muted" style="color:white !important; ">Contanos tu experiencia</h3-->
             </div>
             <br><br>
+              
+           
+            <form id="contactForm">
             <div class="row">
                 <div class="col-lg-7 col-sm-6 mb-4 wow fadeInLeft" data-wow-duration="0.1s">
                     <p style="text-align: left; line-height: 1; color: white!important">¿Recomendarías Fudre WineClub a amigos y familiares?<br><span style="font-size: 12px; font-style: italic;     font-weight: lighter;">(Selecciona una opción siendo 1 "Poco probable" y 10 "Muy probable")</span></p>
@@ -324,7 +146,7 @@ svg {
                 <div class="col-lg-5 col-sm-6 mb-4 wow fadeInRight" data-wow-duration="0.1s">
                     <div class="productRatingStars">
                         <div class="rating">
-                            <input type="radio" id="value10" name="rate" value="10" />
+                            <input type="radio" id="value10" name="Recomendarlo" value="10" />
                             <label for="value10" data-label="Lo súper recomiendo!"> 
                                 <div class="drink wine">
                                     <svg class="pep-10" viewbox="0 0 161 301">
@@ -347,7 +169,7 @@ svg {
                                 </div>
                                 <p>Lo super recomiendo!</p>
                             </label>
-                            <input type="radio" id="value9" name="rate" value="9" />
+                            <input type="radio" id="value9" name="Recomendarlo" value="9" />
                             <label for="value9" data-label="Lo súper recomiendo!"> 
                                 <div class="drink wine">
                                     <svg class="pep-9" viewbox="0 0 161 301">
@@ -369,7 +191,7 @@ svg {
                                     </div>
                                 </div>                               
                             </label>
-                            <input type="radio" id="value8" name="rate" value="8" />
+                            <input type="radio" id="value8" name="Recomendarlo" value="8" />
                             <label for="value8" data-label="Lo súper recomiendo!"> 
                                 <div class="drink wine">
                                     <svg class="pep-8" viewbox="0 0 161 301">
@@ -391,7 +213,7 @@ svg {
                                     </div>
                                 </div>                               
                             </label>
-                            <input type="radio" id="value7" name="rate" value="7" />
+                            <input type="radio" id="value7" name="Recomendarlo" value="7" />
                             <label for="value7" data-label="Lo súper recomiendo!"> 
                                 <div class="drink wine">
                                     <svg class="pep-7" viewbox="0 0 161 301">
@@ -413,7 +235,7 @@ svg {
                                     </div>
                                 </div>                               
                             </label>
-                            <input type="radio" id="value6" name="rate" value="6" />
+                            <input type="radio" id="value6" name="Recomendarlo" value="6" />
                             <label for="value6" data-label="Lo súper recomiendo!"> 
                                 <div class="drink wine">
                                     <svg class="pep-6" viewbox="0 0 161 301">
@@ -435,7 +257,7 @@ svg {
                                     </div>
                                 </div>                               
                             </label>
-                            <input type="radio" id="value5" name="rate" value="5" />
+                            <input type="radio" id="value5" name="Recomendarlo" value="5" />
                             <label for="value6" data-label="Lo súper recomiendo!"> 
                                 <div class="drink wine">
                                     <svg class="pep-5" viewbox="0 0 161 301">
@@ -457,7 +279,7 @@ svg {
                                     </div>
                                 </div>                               
                             </label>
-                            <input type="radio" id="value4" name="rate" value="4" />
+                            <input type="radio" id="value4" name="Recomendarlo" value="4" />
                             <label for="value4" data-label="Lo recomiendo"><div class="drink wine">
                                 <svg class="pep-4" viewbox="0 0 161 301">
                                   <clipPath id="wine-clippath">
@@ -478,7 +300,7 @@ svg {
                                 </div>
                             </div>
                         </label>
-                        <input type="radio" id="value3" name="rate" value="3" />
+                        <input type="radio" id="value3" name="Recomendarlo" value="3" />
                         <label for="value3" data-label="Tal vez lo recomiende">
                             <div class="drink wine">
                                 <svg class="pep-3" viewbox="0 0 161 301">
@@ -500,7 +322,7 @@ svg {
                                 </div>
                             </div>
                         </label>
-                        <input type="radio" id="value2" name="rate" value="2" />
+                        <input type="radio" id="value2" name="Recomendarlo" value="2" />
                         <label for="value2" data-label="No creo recomendarlo">
                             <div class="drink wine">
                                 <svg class="pep-2" viewbox="0 0 161 301">
@@ -522,7 +344,7 @@ svg {
                                 </div>
                             </div>
                         </label>
-                        <input type="radio" id="value1" name="rate" value="1" />
+                        <input type="radio" id="value1" name="Recomendarlo" value="1" />
                             <label for="value1" data-label="No lo recomiendo">
                                 <div class="drink wine">
                                     <svg class="pep-1" viewbox="0 0 161 301">
@@ -547,23 +369,28 @@ svg {
                             </label>
                         </div>
                     </div>
+                    <p id="errorPregunta" class="help-block text-danger">Por favor seleccioná el tipo de memebresía.</p>
                 </div>
+
             </div>
           
-          
+           
             <div class="row">
                 <div class="col-lg-7 col-sm-7 mb-4 wow fadeInLeft" data-wow-duration="0.4s">
-                     <p style="text-align: left; line-height: 1; color: white!important">¿Tenés alguna sugerencia / recomendación? </p>
+                      <p style="text-align: left; line-height: 1; color: white!important">¿Tenés alguna sugerencia / recomendación? </p>
                 </div>
                 <div class="col-lg-5 col-sm-5 mb-4 wow fadeInRight" data-wow-duration="0.4s">
-                    <textarea class="form-control" placeholder="Ingresa el texto que deseas cargar"></textarea>
+                    <textarea class="form-control" name="Comentario" placeholder="Ingresa el texto que deseas cargar"></textarea>
+                    <p id="errorComentario" class="help-block text-danger">Por favor seleccioná el tipo de memebresía.</p>
                 </div>
             </div>
-         
+           <input style="display: none" name="membresia" value="Vendimia">
              <div class="text-center">
-                        <a class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="button" style="cursor: pointer;">Enviar</a>
-                    </div>
+                <a class="btn btn-primary btn-xl text-uppercase" onClick="enviar();" type="button" style="cursor: pointer;">Enviar</a>
+            </div>
+          </form>
         </div>
+      </div>
     </section>
     <!-- Footer-->
     <footer class="footer py-4">
@@ -591,6 +418,7 @@ svg {
     <script src="assets/mail/contact_me.js"></script-->
     <!-- Core theme JS-->
     <script src="../js/scripts.js"></script>
+    <script src="../js/validaciones.js"></script>
     <!-- Event snippet for Botón Whatsapp conversion page
     In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>

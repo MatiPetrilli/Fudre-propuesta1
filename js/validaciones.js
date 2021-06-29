@@ -132,25 +132,47 @@ function validar(){
 						document.getElementById("contactForm").style.display = "none"
 						document.getElementById("paymentForm").style.display = "block"
 						location.href = "#paymentForm";
-						valormembresia = $("select")[0].value + " - " + $("select")[1].value
+						if(document.getElementById("provincia").value == "Ciudad Autónoma de Buenos Aires" || AMBA.includes(document.getElementById("localidades").value)){
+							valormembresia = $("select")[2].value + " - " + $("select")[3].value + " - AMBA"
+						}else{
+							valormembresia = $("select")[2].value + " - " + $("select")[3].value + " - NOAMBA"
+						}						
 						switch(valormembresia){
-							case "MEMBRESIA BROTE - 3 Botellas":
+							case "MEMBRESIA BROTE - 3 Botellas - AMBA":
 								plan = '2c9380847981e6c40179a930276e0db3' //2c9380847981e6c40179a930276e0db3
 							break;
-							case "MEMBRESIA BROTE - 4 Botellas":
+							case "MEMBRESIA BROTE - 3 Botellas - NOAMBA":
+								plan = '2c9380847a48df71017a4e559ad800a5' //2c9380847a48df71017a4e559ad800a5
+							break;
+							case "MEMBRESIA BROTE - 4 Botellas - AMBA":
 								plan = '2c93808479896d720179a93ac68c0b19' // 2c93808479896d720179a93ac68c0b19
 							break;
-							case "MEMBRESIA ENVERO - 3 Botellas":
+							case "MEMBRESIA BROTE - 4 Botellas - NOAMBA":
+								plan = '2c9380847a48df15017a4e54c99a00aa' // 2c9380847a48df15017a4e54c99a00aa
+							break;
+							case "MEMBRESIA ENVERO - 3 Botellas - AMBA":
 								plan = '2c9380847981e6b00179a93d4d800da4' //2c9380847981e6b00179a93d4d800da4
 							break;
-							case "MEMBRESIA ENVERO - 4 Botellas":
+							case "MEMBRESIA ENVERO - 3 Botellas - NOAMBA":
+								plan = '2c9380847a48df71017a4e5118a600a4' //2c9380847a48df71017a4e5118a600a4
+							break;
+							case "MEMBRESIA ENVERO - 4 Botellas - AMBA":
 								plan = '2c9380847981e6c40179a93ea1810dbc' //2c9380847981e6c40179a93ea1810dbc
 							break;
-							case "MEMBRESIA VENDIMIA - 3 Botellas":
+							case "MEMBRESIA ENVERO - 4 Botellas - NOAMBA":
+								plan = '2c9380847a48df4c017a4e504e2800bc' //2c9380847a48df4c017a4e504e2800bc
+							break;
+							case "MEMBRESIA VENDIMIA - 3 Botellas - AMBA":
 								plan = '2c9380847981e6c40179a942318a0dbf' //2c9380847981e6c40179a942318a0dbf
 							break;
-							case "MEMBRESIA VENDIMIA - 4 Botellas":
+							case "MEMBRESIA VENDIMIA - 3 Botellas - NOAMBA":
+								plan = '2c9380847a48df1f017a4e4d7c45009d' //2c9380847a48df1f017a4e4d7c45009d
+							break;
+							case "MEMBRESIA VENDIMIA - 4 Botellas - AMBA":
 								plan = '2c93808479896d720179a943f7810b29' //2c93808479896d720179a943f7810b29
+							break;
+							case "MEMBRESIA VENDIMIA - 4 Botellas - NOAMBA":
+								plan = '2c9380847a48df5a017a4e4c53fa00ab' //2c9380847a48df5a017a4e4c53fa00ab
 							break;
 						}
 						
@@ -311,3 +333,73 @@ var yyyy = today.getFullYear();
 
 today =  dd + '/' + mm + '/' + yyyy;
 document.getElementById("Fecha").value = today
+
+function enviar(){
+  envia = true
+  
+  if($("textarea")[0].value == ""){
+    $("#errorComentario")[0].style.display = "block"
+    envia = false
+  }else{
+    $("#errorComentario")[0].style.display = "none"
+  }
+  if(envia){
+    $.ajax({
+        //POST al drive
+            url:'https://api.apispreadsheets.com/data/14772/',
+            type:'post',
+            data:$("#contactForm").serializeArray(),
+            success: function(){
+          // alert("se grabo correctamente")
+         document.getElementById("gracias").style.display = "block"
+      document.getElementById("formulario").style.display = "none"
+        },
+        error:function(){
+           document.getElementById("error").style.display = "block"
+      document.getElementById("formulario").style.display = "none"
+        }
+      })
+  }
+  
+}
+
+municipios = []
+AMBA =["Almirante Brown", "Avellaneda", "Berazatagui", "Berisso", "Brandsen", "Campana", "Cañuelas", "Ensenada", "Escobar", "Esteban Echeverría", "Exaltación de la Cruz", "Ezeiza", "Florencio Varela", "General Las Heras", "General Rodríguez", "General San Martín", "Hurlingham", "Ituzaingó", "José C. Paz", "La Matanza", "Lanús", "La Plata", "Lomas de Zamora", "Luján", "Marcos Paz", "Malvinas Argentinas", "Moreno", "Merlo", "Morón", "Pilar", "Presidente Perón", "Quilmes", "San Fernando", "San Isidro", "San Miguel", "San Vicente", "Tigre", "Tres de Febrero", "Vicente López", "Zárate"]
+function selectLocalidad(){
+
+   $.getJSON( "loc.json", function( data ) {
+    limpiarOptions();
+    municipios = []
+    select = document.getElementById("localidades")
+        for(i=0;i<data.cantidad;i++){
+            if(document.getElementById("provincia").value == "Ciudad Autónoma de Buenos Aires"){
+            //que venga por default, CABA                     
+                municipios.push("Ciudad Autónoma de Buenos Aires")
+                i = data.cantidad
+            }else{
+                if(data.censales[i].provincia.nombre == document.getElementById("provincia").value){
+                    
+                    //Agregarlo al select:
+                    municipios.push(data.censales[i].nombre)
+                }
+            }   
+        }
+        municipios.sort()
+        cargarMunicipios()
+    }) 
+}
+function cargarMunicipios(){
+    municipios.forEach(function(municipio, index) {
+        var opt = document.createElement('option');
+        opt.value = municipio;
+        opt.innerHTML = municipio;
+        select.appendChild(opt);
+    });   
+}
+function limpiarOptions(){
+    $('#localidades option').each(function() {
+    if ( $(this).val() != '' ) {
+        $(this).remove();
+    }
+});
+}
