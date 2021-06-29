@@ -64,6 +64,38 @@ function setearmembresia(membresia){
 	document.getElementById("id_Membresia").value = membresia
 	actbotellas()
 }
+function actlocalidad(){
+	switch(membresia){
+		case "BROTE": 
+			if(document.getElementById("provincia").value == "Ciudad Autónoma de Buenos Aires" || AMBA.includes(document.getElementById("localidades").value)){
+				document.getElementById("op1").innerText = "3 Botellas - $1.965"
+				document.getElementById("op2").innerText = "4 Botellas - $2.420"
+			}else{
+				document.getElementById("op1").innerText = "3 Botellas - $1.965 + $400(envío)"
+				document.getElementById("op2").innerText = "4 Botellas - $2.420 + $400(envío)"
+			}			
+		break;
+		case "ENVERO":
+			if(document.getElementById("provincia").value == "Ciudad Autónoma de Buenos Aires" || AMBA.includes(document.getElementById("localidades").value)){
+				document.getElementById("op1").innerText = "3 Botellas - $2.430"
+				document.getElementById("op2").innerText = "4 Botellas - $3.080"
+			}else{
+				document.getElementById("op1").innerText = "3 Botellas - $2.430 + $400(envío)"
+				document.getElementById("op2").innerText = "4 Botellas - $3.080 + $400(envío)"
+			}			
+		break;
+		case "VENDIMIA":
+			if(document.getElementById("provincia").value == "Ciudad Autónoma de Buenos Aires" || AMBA.includes(document.getElementById("localidades").value)){
+				document.getElementById("op1").innerText = "3 Botellas - $3.810"
+				document.getElementById("op2").innerText = "4 Botellas - $4.760"
+			}else{
+				document.getElementById("op1").innerText = "3 Botellas - $3.810 + $400(envío)"
+				document.getElementById("op2").innerText = "4 Botellas - $4.760 + $400(envío)"
+			}
+			
+		break;
+	}
+}
 function actbotellas(){
 	membresia = document.getElementById("id_Membresia").value.split(" ")[1]
 	document.getElementById("id_Botellas").style.display = "block"
