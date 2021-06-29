@@ -66,18 +66,35 @@ function setearmembresia(membresia){
 }
 function actbotellas(){
 	membresia = document.getElementById("id_Membresia").value.split(" ")[1]
+	document.getElementById("id_Botellas").style.display = "block"
 	switch(membresia){
 		case "BROTE": 
-			document.getElementById("op1").innerText = "3 Botellas - $1.965"
-			document.getElementById("op2").innerText = "4 Botellas - $2.420"
+			if(document.getElementById("provincia").value == "Ciudad Autónoma de Buenos Aires" || AMBA.includes(document.getElementById("localidades").value)){
+				document.getElementById("op1").innerText = "3 Botellas - $1.965"
+				document.getElementById("op2").innerText = "4 Botellas - $2.420"
+			}else{
+				document.getElementById("op1").innerText = "3 Botellas - $1.965 + $400(envío)"
+				document.getElementById("op2").innerText = "4 Botellas - $2.420 + $400(envío)"
+			}			
 		break;
 		case "ENVERO":
-			document.getElementById("op1").innerText = "3 Botellas - $2.430"
-			document.getElementById("op2").innerText = "4 Botellas - $3.080"
+			if(document.getElementById("provincia").value == "Ciudad Autónoma de Buenos Aires" || AMBA.includes(document.getElementById("localidades").value)){
+				document.getElementById("op1").innerText = "3 Botellas - $2.430"
+				document.getElementById("op2").innerText = "4 Botellas - $3.080"
+			}else{
+				document.getElementById("op1").innerText = "3 Botellas - $2.430 + $400(envío)"
+				document.getElementById("op2").innerText = "4 Botellas - $3.080 + $400(envío)"
+			}			
 		break;
 		case "VENDIMIA":
-			document.getElementById("op1").innerText = "3 Botellas - $3.810"
-			document.getElementById("op2").innerText = "4 Botellas - $4.760"
+			if(document.getElementById("provincia").value == "Ciudad Autónoma de Buenos Aires" || AMBA.includes(document.getElementById("localidades").value)){
+				document.getElementById("op1").innerText = "3 Botellas - $3.810"
+				document.getElementById("op2").innerText = "4 Botellas - $4.760"
+			}else{
+				document.getElementById("op1").innerText = "3 Botellas - $3.810 + $400(envío)"
+				document.getElementById("op2").innerText = "4 Botellas - $4.760 + $400(envío)"
+			}
+			
 		break;
 	}
 }
@@ -334,34 +351,7 @@ var yyyy = today.getFullYear();
 today =  dd + '/' + mm + '/' + yyyy;
 document.getElementById("Fecha").value = today
 
-function enviar(){
-  envia = true
-  
-  if($("textarea")[0].value == ""){
-    $("#errorComentario")[0].style.display = "block"
-    envia = false
-  }else{
-    $("#errorComentario")[0].style.display = "none"
-  }
-  if(envia){
-    $.ajax({
-        //POST al drive
-            url:'https://api.apispreadsheets.com/data/14772/',
-            type:'post',
-            data:$("#contactForm").serializeArray(),
-            success: function(){
-          // alert("se grabo correctamente")
-         document.getElementById("gracias").style.display = "block"
-      document.getElementById("formulario").style.display = "none"
-        },
-        error:function(){
-           document.getElementById("error").style.display = "block"
-      document.getElementById("formulario").style.display = "none"
-        }
-      })
-  }
-  
-}
+
 
 municipios = []
 AMBA =["Almirante Brown", "Avellaneda", "Berazatagui", "Berisso", "Brandsen", "Campana", "Cañuelas", "Ensenada", "Escobar", "Esteban Echeverría", "Exaltación de la Cruz", "Ezeiza", "Florencio Varela", "General Las Heras", "General Rodríguez", "General San Martín", "Hurlingham", "Ituzaingó", "José C. Paz", "La Matanza", "Lanús", "La Plata", "Lomas de Zamora", "Luján", "Marcos Paz", "Malvinas Argentinas", "Moreno", "Merlo", "Morón", "Pilar", "Presidente Perón", "Quilmes", "San Fernando", "San Isidro", "San Miguel", "San Vicente", "Tigre", "Tres de Febrero", "Vicente López", "Zárate"]
