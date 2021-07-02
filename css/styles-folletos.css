@@ -11051,11 +11051,11 @@ svg {
   }
 }
 .rating p{
-    font-size: 12px;
+    font-size: 10px;
     color: white;
     font-style: italic;
     position: relative;
-    left: -80%;
+    left: -30%;
 }
 
 ::-webkit-input-placeholder { /* Edge */
@@ -11071,12 +11071,9 @@ svg {
 }
 @media (max-width: 750px){
     #portfolio{
-        height: 340vh!important;
+        height: 290vh!important;;
     }
-    .rating p{
-    font-size: 8px!important;
-    
-}
+   
 }
 #fixedbutton {
     position: fixed;
