@@ -11069,12 +11069,7 @@ svg {
 ::placeholder {
   color: lightgrey!important;
 }
-@media (max-width: 750px){
-    #portfolio{
-        height: 290vh!important;;
-    }
-   
-}
+
 #fixedbutton {
     position: fixed;
     bottom: 0px;
